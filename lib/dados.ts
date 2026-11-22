@@ -106,3 +106,20 @@ export const provinciasAngola = [
   "Huíla", "Icolo e Bengo", "Luanda", "Lunda Norte", "Lunda Sul", "Malanje", "Moxico", "Moxico Leste", "Namibe",
   "Uíge", "Zaire",
 ];
+
+// Profissões mais bem pagas (gráfico da página inicial).
+// TODO (fase 4): calcular a partir das partilhas (só cargos com 5+ respostas).
+// Enquanto não há dados, o gráfico mostra um EXEMPLO ILUSTRATIVO: "indice" é só a largura relativa
+// da barra (0–100), não um salário, e o gráfico indica claramente que é um exemplo.
+export type Ranking = { cargo: string; publico: number | null; privado: number | null };
+
+export const rankingPagas: Ranking[] = [];
+
+export const rankingExemplo: { cargo: string; publico: number; privado: number }[] = [
+  { cargo: "Engenheiro(a) de petróleo", publico: 58, privado: 100 },
+  { cargo: "Médico(a)", publico: 64, privado: 82 },
+  { cargo: "Jurista", publico: 52, privado: 71 },
+  { cargo: "Gestor(a) comercial", publico: 40, privado: 63 },
+  { cargo: "Contabilista", publico: 38, privado: 52 },
+  { cargo: "Enfermeiro(a)", publico: 34, privado: 44 },
+];

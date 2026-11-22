@@ -1,14 +1,13 @@
 import Link from "next/link";
 import { SearchIcon } from "@/components/Icons";
-import { SectorBar } from "@/components/SectorBar";
-import { comparacaoDestaque, maisPesquisados, sectorLabel } from "@/lib/dados";
+import { HeroGrafico } from "@/components/HeroGrafico";
+import { RankingGrafico } from "@/components/RankingGrafico";
+import { maisPesquisados, sectorLabel } from "@/lib/dados";
 import { formatKz } from "@/lib/format";
 import { pillOutline, pillPrimary } from "@/lib/ui";
 
 
 export default function Inicio() {
-  const c = comparacaoDestaque;
-  const max = Math.max(c.publico ?? 0, c.privado ?? 0) || null;
 
   return (
     <>
@@ -44,6 +43,8 @@ export default function Inicio() {
           <Link href="/partilhar" className="flex min-h-11 items-center no-underline">Partilhar o meu salário ›</Link>
           <Link href="/metodologia" className="flex min-h-11 items-center no-underline">Como funciona ›</Link>
         </div>
+
+        <HeroGrafico />
       </section>
 
       {/* Público vs privado (bloco escuro) */}
@@ -51,18 +52,14 @@ export default function Inicio() {
         <h2 className="m-0 text-[32px] leading-9 font-bold tracking-[-0.6px] md:text-5xl md:leading-[52px] md:tracking-[-1px]">
           Público vs privado.
         </h2>
-        <p className="m-0 text-[19px] leading-[26px] text-muted md:text-2xl md:leading-8">O mesmo cargo, lado a lado.</p>
-        <div className="mt-7 flex w-full max-w-[640px] flex-col gap-5 text-left md:mt-10">
-          <SectorBar label={`${c.cargo} · Público`} valor={c.publico} max={max} sector="publico" />
-          <SectorBar label={`${c.cargo} · Privado`} valor={c.privado} max={max} sector="privado" />
+        <p className="m-0 text-[19px] leading-[26px] text-muted md:text-2xl md:leading-8">As profissões mais bem pagas, lado a lado.</p>
+        <div className="mt-8 flex w-full justify-center md:mt-12">
+          <RankingGrafico />
         </div>
-        <div className="mt-6 flex flex-wrap justify-center gap-3 md:mt-8">
-          <Link href="/salarios/enfermeiro" className={pillPrimary}>Ver comparação</Link>
+        <div className="mt-8 flex flex-wrap justify-center gap-3 md:mt-10">
+          <Link href="/salarios" className={pillPrimary}>Ver todas as profissões</Link>
           <Link href="/metodologia" className={pillOutline}>Saiba mais</Link>
         </div>
-        <p className="num m-0 mt-4 text-xs leading-4 text-muted md:mt-6">
-          Mediana do salário base · {c.respostas ?? "—"} respostas
-        </p>
       </section>
 
       {/* Tiles */}

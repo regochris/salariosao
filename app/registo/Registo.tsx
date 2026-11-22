@@ -37,8 +37,8 @@ export function Registo({ inicial }: { inicial: Perfil }) {
             type="button"
             aria-pressed={perfil === o.v}
             onClick={() => setPerfil(o.v)}
-            className={`flex flex-col items-start gap-0.5 rounded-tile border-2 px-[18px] py-4 text-left text-ink ${
-              perfil === o.v ? "border-primary bg-primary-soft" : "border-transparent bg-surface"
+            className={`btn flex flex-col items-start gap-0.5 rounded-tile border-2 px-[18px] py-4 text-left text-ink ${
+              perfil === o.v ? "border-primary bg-primary-soft" : "border-line bg-surface hover:border-input"
             }`}
           >
             <strong className="font-semibold">{o.titulo}</strong>
@@ -59,7 +59,7 @@ export function Registo({ inicial }: { inicial: Perfil }) {
       <button type="submit" className={`${pillPrimary} h-[50px]`}>
         {perfil === "trabalho" ? "Criar conta e partilhar" : "Criar conta"}
       </button>
-      <p className="m-0 text-center text-[15px]">Já tem conta? <Link href="/registo" className="no-underline">Entrar</Link></p>
+      <p className="m-0 text-center text-[15px]">Já tem conta? <Link href="/registo">Entrar</Link></p>
       <p className="m-0 text-center text-xs text-muted">
         Ao criar conta aceita os <Link href="/termos">Termos</Link> e a <Link href="/privacidade">Política de privacidade</Link>.
       </p>

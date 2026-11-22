@@ -15,7 +15,7 @@ export default async function Salarios({ searchParams }: { searchParams: Promise
     <div className="mx-auto flex max-w-[1024px] flex-col gap-6 px-5 pt-10 pb-16 md:px-[22px] md:pt-16">
       <h1 className={h1}>Pesquisar salários.</h1>
 
-      <form action="/salarios" className="flex h-[52px] w-full max-w-[640px] items-center gap-2 rounded-pill bg-surface pr-2 pl-5">
+      <form action="/salarios" className="flex h-[52px] w-full max-w-[640px] items-center gap-2 rounded-pill border border-input bg-bg pr-2 pl-5 transition-colors focus-within:border-primary hover:border-ink">
         <label htmlFor="q" className="sr-only">Cargo ou profissão</label>
         <SearchIcon className="shrink-0 text-muted" />
         <input
@@ -43,7 +43,7 @@ export default async function Salarios({ searchParams }: { searchParams: Promise
         <ul className="m-0 list-none p-0">
           {resultados.map((p) => (
             <li key={p.slug} className="border-b border-line last:border-b-0">
-              <Link href={`/salarios/${p.slug}`} className="num flex flex-wrap items-baseline justify-between gap-2 py-4 text-ink no-underline md:py-5 md:text-[19px]">
+              <Link href={`/salarios/${p.slug}`} className="row num flex flex-wrap items-baseline justify-between gap-2 py-4 text-ink no-underline md:py-5 md:text-[19px]">
                 <span>
                   <span className="font-semibold">{p.cargo}</span>
                   <span className="ml-3 text-[15px] text-muted">{p.area}</span>

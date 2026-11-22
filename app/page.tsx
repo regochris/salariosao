@@ -3,9 +3,8 @@ import { SearchIcon } from "@/components/Icons";
 import { SectorBar } from "@/components/SectorBar";
 import { comparacaoDestaque, maisPesquisados, sectorLabel } from "@/lib/dados";
 import { formatKz } from "@/lib/format";
+import { pillOutline, pillPrimary } from "@/lib/ui";
 
-const pill =
-  "inline-flex h-11 items-center justify-center rounded-pill px-[22px] text-[15px] font-medium no-underline";
 
 export default function Inicio() {
   const c = comparacaoDestaque;
@@ -23,7 +22,7 @@ export default function Inicio() {
           Salários reais de Angola. Público e privado. Partilhados de forma anónima.
         </p>
 
-        <form id="busca" action="/salarios" className="mt-6 flex h-[52px] w-full max-w-[560px] items-center gap-2 rounded-pill bg-surface pr-2 pl-5 md:mt-7 md:h-14">
+        <form id="busca" action="/salarios" className="mt-6 flex h-[52px] w-full max-w-[560px] items-center gap-2 rounded-pill border border-input bg-bg pr-2 pl-5 transition-colors focus-within:border-primary hover:border-ink md:mt-7 md:h-14">
           <label htmlFor="q" className="sr-only">Cargo ou profissão</label>
           <SearchIcon className="shrink-0 text-muted" />
           <input
@@ -33,11 +32,11 @@ export default function Inicio() {
             placeholder="Procure um cargo, ex.: enfermeiro"
             className="min-w-0 flex-1 bg-transparent text-ink outline-none placeholder:text-muted"
           />
-          <button type="submit" className={`${pill} hidden bg-primary text-on-primary md:inline-flex`}>
+          <button type="submit" className={`${pillPrimary} hidden md:inline-flex`}>
             Pesquisar
           </button>
         </form>
-        <button type="submit" form="busca" className={`${pill} mt-3 bg-primary text-on-primary md:hidden`}>
+        <button type="submit" form="busca" className={`${pillPrimary} mt-3 md:hidden`}>
           Pesquisar
         </button>
 
@@ -58,8 +57,8 @@ export default function Inicio() {
           <SectorBar label={`${c.cargo} · Privado`} valor={c.privado} max={max} sector="privado" />
         </div>
         <div className="mt-6 flex flex-wrap justify-center gap-3 md:mt-8">
-          <Link href="/salarios/enfermeiro" className={`${pill} bg-primary text-on-primary hover:text-on-primary`}>Ver comparação</Link>
-          <Link href="/metodologia" className={`${pill} border border-primary text-primary`}>Saiba mais</Link>
+          <Link href="/salarios/enfermeiro" className={pillPrimary}>Ver comparação</Link>
+          <Link href="/metodologia" className={pillOutline}>Saiba mais</Link>
         </div>
         <p className="num m-0 mt-4 text-xs leading-4 text-muted md:mt-6">
           Mediana do salário base · {c.respostas ?? "—"} respostas
@@ -68,7 +67,7 @@ export default function Inicio() {
 
       {/* Tiles */}
       <section className="grid grid-cols-1 gap-3 p-3 lg:grid-cols-2">
-        <Link href="/calculadora" className="flex min-h-[440px] flex-col items-center gap-2 rounded-tile bg-surface px-5 pt-11 pb-6 text-center text-ink no-underline md:min-h-[520px] md:px-8 md:pt-14">
+        <Link href="/calculadora" className="card flex min-h-[440px] flex-col items-center gap-2 rounded-tile bg-surface px-5 pt-11 pb-6 text-center text-ink no-underline md:min-h-[520px] md:px-8 md:pt-14">
           <h3 className="m-0 text-[28px] leading-8 font-bold tracking-[-0.5px] md:text-[40px] md:leading-[44px] md:tracking-[-0.8px]">Calculadora</h3>
           <p className="m-0 text-[17px] text-muted md:text-[21px] md:leading-7">Do bruto ao líquido, em segundos.</p>
           <span className="text-primary">Calcular ›</span>
@@ -80,22 +79,22 @@ export default function Inicio() {
           </div>
         </Link>
 
-        <Link href="/funcao-publica" className="ink flex min-h-[440px] flex-col items-center gap-2 rounded-tile bg-surface px-5 pt-11 pb-6 text-center text-ink no-underline md:min-h-[520px] md:px-8 md:pt-14">
+        <Link href="/funcao-publica" className="card ink flex min-h-[440px] flex-col items-center gap-2 rounded-tile bg-surface px-5 pt-11 pb-6 text-center text-ink no-underline md:min-h-[520px] md:px-8 md:pt-14">
           <h3 className="m-0 text-[28px] leading-8 font-bold tracking-[-0.5px] md:text-[40px] md:leading-[44px] md:tracking-[-0.8px]">Função pública</h3>
           <p className="m-0 text-[17px] text-muted md:text-[21px] md:leading-7">Tabelas oficiais por carreira e escalão.</p>
           <span className="text-primary">Ver tabelas ›</span>
         </Link>
 
-        <Link href="/partilhar" className="flex min-h-[360px] flex-col items-center justify-center gap-2 rounded-tile bg-primary-soft px-5 py-11 text-center text-ink no-underline md:min-h-[440px] md:px-8">
+        <Link href="/partilhar" className="card flex min-h-[360px] flex-col items-center justify-center gap-2 rounded-tile bg-primary-soft px-5 py-11 text-center text-ink no-underline md:min-h-[440px] md:px-8">
           <h3 className="m-0 text-[28px] leading-8 font-bold tracking-[-0.5px] md:text-[40px] md:leading-[44px] md:tracking-[-0.8px]">Partilhe. Desbloqueie.</h3>
           <p className="m-0 max-w-[26ch] text-[17px] text-muted md:text-[21px] md:leading-7">
             Diga quanto ganha e veja subsídios, benefícios e intervalos de cada cargo.
           </p>
-          <span className={`${pill} mt-4 bg-primary text-on-primary`}>Partilhar o meu salário</span>
+          <span className={`${pillPrimary} mt-4`}>Partilhar o meu salário</span>
           <span className="mt-2 text-sm text-muted">Anónimo. Cerca de 3 minutos.</span>
         </Link>
 
-        <Link href="/registo?perfil=estudante" className="flex min-h-[360px] flex-col items-center justify-center gap-2 rounded-tile bg-surface px-5 py-11 text-center text-ink no-underline md:min-h-[440px] md:px-8">
+        <Link href="/registo?perfil=estudante" className="card flex min-h-[360px] flex-col items-center justify-center gap-2 rounded-tile bg-surface px-5 py-11 text-center text-ink no-underline md:min-h-[440px] md:px-8">
           <h3 className="m-0 text-[28px] leading-8 font-bold tracking-[-0.5px] md:text-[40px] md:leading-[44px] md:tracking-[-0.8px]">Para estudantes.</h3>
           <p className="m-0 max-w-[26ch] text-[17px] text-muted md:text-[21px] md:leading-7">
             Veja quanto ganha cada profissão antes de escolher o curso.
@@ -112,7 +111,7 @@ export default function Inicio() {
         <ul className="m-0 list-none p-0">
           {maisPesquisados.map((d) => (
             <li key={d.slug} className="border-b border-line last:border-b-0">
-              <Link href={`/salarios/${d.slug}`} className="num flex flex-wrap justify-between gap-2 py-4 text-ink no-underline md:py-5 md:text-[19px]">
+              <Link href={`/salarios/${d.slug}`} className="row num flex flex-wrap justify-between gap-2 py-4 text-ink no-underline md:py-5 md:text-[19px]">
                 <span className="font-semibold">{d.cargo}</span>
                 <span>
                   <span className="mr-4 text-[15px] text-muted">{sectorLabel[d.sector]}</span>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { pillPrimary } from "@/lib/ui";
 
 // Página mostrada quando um endereço ainda não existe (páginas em construção).
 export default function NaoEncontrado() {
@@ -11,10 +12,7 @@ export default function NaoEncontrado() {
       <p className="m-0 max-w-[34ch] text-[19px] leading-[26px] text-muted">
         Estamos a preparar esta secção do SaláriosAO. Volte em breve.
       </p>
-      <Link
-        href="/"
-        className="mt-4 inline-flex h-11 items-center rounded-pill bg-primary px-[22px] text-[15px] font-medium text-on-primary no-underline hover:text-on-primary"
-      >
+      <Link href="/" className={`${pillPrimary} mt-4`}>
         Voltar ao início
       </Link>
     </section>

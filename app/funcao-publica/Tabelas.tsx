@@ -18,7 +18,7 @@ export function Tabelas() {
             role="tab"
             aria-selected={n === i}
             onClick={() => setI(n)}
-            className={`h-10 shrink-0 rounded-pill px-4 text-[15px] font-medium ${n === i ? "bg-ink text-bg" : "bg-surface text-ink"}`}
+            className={`btn h-10 shrink-0 rounded-pill px-4 text-[15px] font-medium ${n === i ? "bg-ink text-bg" : "bg-surface text-ink hover:bg-surface-2"}`}
           >
             {x.nome}
           </button>
@@ -42,7 +42,7 @@ export function Tabelas() {
         <p className="m-0 mt-2 text-xs text-muted">Valores em Kz · Tabela oficial a carregar.</p>
       </section>
 
-      <Link href="/salarios" className="flex items-center justify-between rounded-tile bg-accent-soft p-5 text-ink no-underline">
+      <Link href="/salarios" className="card flex items-center justify-between rounded-tile bg-accent-soft p-5 text-ink">
         <span className="flex flex-col">
           <strong className="font-semibold">E no sector privado?</strong>
           <span className="text-sm text-muted">Compare o mesmo cargo</span>

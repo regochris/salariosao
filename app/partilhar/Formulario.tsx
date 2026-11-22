@@ -59,7 +59,7 @@ export function Formulario() {
           A sua partilha ajuda milhares de pessoas a negociar melhor. Os dados completos estão desbloqueados.
         </p>
         <Link href="/salarios" className={`${pillPrimary} mt-4 h-12 px-7`}>Ver salários</Link>
-        <Link href="/" className="flex min-h-11 items-center no-underline">Voltar ao início ›</Link>
+        <Link href="/" className="flex min-h-11 items-center">Voltar ao início ›</Link>
       </div>
     );
   }
@@ -70,7 +70,7 @@ export function Formulario() {
       type="button"
       aria-pressed={sector === v}
       onClick={() => setSector(v)}
-      className={`min-h-12 rounded-pill ${sector === v ? "border-2 border-primary bg-primary-soft font-semibold" : "border border-line bg-bg"} text-ink`}
+      className={`btn min-h-12 rounded-pill ${sector === v ? "border-2 border-primary bg-primary-soft font-semibold" : "border border-input bg-bg hover:bg-surface"} text-ink`}
     >
       {nome}
     </button>
@@ -186,7 +186,7 @@ export function Formulario() {
           <p className="m-0 text-[15px] font-semibold">Benefícios</p>
           <div className="flex flex-wrap gap-2">
             {["Seguro de saúde", "Seguro com família", "Viatura", "Combustível", "Formação paga", "Plano de pensões"].map((b) => (
-              <label key={b} className="flex min-h-11 items-center gap-2 rounded-pill bg-surface px-3.5">
+              <label key={b} className="flex min-h-11 cursor-pointer items-center gap-2 rounded-pill border border-input bg-bg px-3.5 transition-colors hover:bg-surface">
                 <input type="checkbox" name="beneficios" value={b} className="size-[18px]" /> {b}
               </label>
             ))}

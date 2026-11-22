@@ -55,7 +55,7 @@ export function Calculadora() {
         )}
       </section>
 
-      <Link href="/salarios" className="flex items-center justify-between rounded-tile bg-primary-soft p-5 text-ink no-underline">
+      <Link href="/salarios" className="card flex items-center justify-between rounded-tile bg-primary-soft p-5 text-ink">
         <span className="flex flex-col">
           <strong className="font-semibold">O seu salário está na média?</strong>
           <span className="text-sm text-muted">Compare com o seu cargo</span>

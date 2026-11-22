@@ -31,6 +31,9 @@ Todas as combinações de texto foram verificadas: mínimo 4,5:1.
 | `--success` | `#1E7A3A` | `#4CC27A` | Acima da mediana, confirmação |
 | `--warning` | `#A16207` | `#E0A93B` | Poucos dados (menos de 5 respostas), em revisão |
 | `--error` | `#B42318` | `#F0776B` | Erros de formulário |
+| `--button` | `#0066CC` | `#0071E3` | Fundo dos botões principais (texto sempre branco: 5,6:1 / 4,7:1) |
+| `--button-hover` | `#004E9E` | `#005BB5` | Hover dos botões principais |
+| `--input-border` | `#86868B` | `#7C7C80` | Borda das caixas de texto e da pesquisa (≥ 3:1) |
 
 Regras:
 - **Privado = azul, público = terracota**, sempre. O utilizador aprende a leitura uma vez.
@@ -76,9 +79,9 @@ Linhas de texto com 60 a 75 caracteres (`max-width: 68ch`).
 - *Primário*: pílula, fundo `--primary`, texto `--on-primary`, 15 px / 500.
 - *Secundário*: pílula com contorno `--primary`, texto `--primary` ("Saiba mais").
 - *Ligação de ação*: texto `--primary` com " ›" no fim ("Partilhar o meu salário ›").
-- Estados: hover `--primary-hover`; foco com anel de 2 px `--primary` e 2 px de espaço; desativado com 40% de opacidade e sem cursor.
+- Estados: hover `--button-hover` (primário), fundo `--primary-soft` (contorno), fundo `--surface` (discreto); ao clicar, encolhe 2%; foco com anel de 2 px `--primary` e 2 px de espaço; desativado com 40% de opacidade e sem cursor.
 
-**Inputs**: altura 44 px, borda `--border`, raio `--r-sm`, etiqueta sempre visível por cima (nunca só placeholder). Erro: borda e texto `--error`, com a mensagem por baixo. O campo de valor tem seletor Kz/USD colado à direita.
+**Inputs**: altura 44 px, borda `--input-border` (escurece no hover, azul com anel no foco), raio `--r-sm`, etiqueta sempre visível por cima (nunca só placeholder). Erro: borda e texto `--error`, com a mensagem por baixo. O campo de valor tem seletor Kz/USD colado à direita.
 
 **Cartão salarial** (o componente central)
 - Cargo (h3) e etiqueta Público/Privado.
@@ -93,7 +96,9 @@ Linhas de texto com 60 a 75 caracteres (`max-width: 68ch`).
 
 **Formulário em passos**: barra de progresso no topo ("Passo 2 de 6"), um bloco de campos por ecrã, botão "Continuar" fixo em baixo no telemóvel e mensagem de anonimato visível em todos os passos.
 
-**Navegação**: barra superior com logótipo, Pesquisar, Função Pública, Calculadora e Entrar. No telemóvel, menu com 4 ícones em baixo: Início, Pesquisar, Partilhar, Conta.
+**Hover**: texto clicável sublinha; cartões e blocos clicáveis sobem 2 px; linhas de lista ficam azuis.
+
+**Navegação**: menu a 15 px; barra superior com logótipo, Pesquisar, Função Pública, Calculadora e Entrar. No telemóvel, menu com 4 ícones em baixo: Início, Pesquisar, Partilhar, Conta.
 
 **Rodapé**: Metodologia, Privacidade, Contacto, redes sociais, "Dados agregados e anónimos".
 

@@ -95,7 +95,7 @@ export default function Inicio() {
           <span className="mt-2 text-sm text-muted">Anónimo. Cerca de 3 minutos.</span>
         </Link>
 
-        <Link href="/estudantes" className="flex min-h-[360px] flex-col items-center justify-center gap-2 rounded-tile bg-surface px-5 py-11 text-center text-ink no-underline md:min-h-[440px] md:px-8">
+        <Link href="/registo?perfil=estudante" className="flex min-h-[360px] flex-col items-center justify-center gap-2 rounded-tile bg-surface px-5 py-11 text-center text-ink no-underline md:min-h-[440px] md:px-8">
           <h3 className="m-0 text-[28px] leading-8 font-bold tracking-[-0.5px] md:text-[40px] md:leading-[44px] md:tracking-[-0.8px]">Para estudantes.</h3>
           <p className="m-0 max-w-[26ch] text-[17px] text-muted md:text-[21px] md:leading-7">
             Veja quanto ganha cada profissão antes de escolher o curso.

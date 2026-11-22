@@ -5,9 +5,9 @@ const links = [
   { href: "/salarios", label: "Salários" },
   { href: "/funcao-publica", label: "Função pública" },
   { href: "/calculadora", label: "Calculadora" },
-  { href: "/estudantes", label: "Estudantes" },
+  { href: "/registo?perfil=estudante", label: "Estudantes" },
   { href: "/metodologia", label: "Metodologia" },
-  { href: "/entrar", label: "Entrar" },
+  { href: "/registo", label: "Entrar" },
 ];
 
 export function Header() {

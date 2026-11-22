@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { SearchIcon } from "@/components/Icons";
 import { HeroGrafico } from "@/components/HeroGrafico";
 import { RankingGrafico } from "@/components/RankingGrafico";
 import { maisPesquisados, sectorLabel } from "@/lib/dados";
@@ -21,30 +20,11 @@ export default function Inicio() {
           Salários reais de Angola. Público e privado. Partilhados de forma anónima.
         </p>
 
-        <form id="busca" action="/salarios" className="mt-6 flex h-[52px] w-full max-w-[560px] items-center gap-2 rounded-pill border border-input bg-bg pr-2 pl-5 transition-colors focus-within:border-primary hover:border-ink md:mt-7 md:h-14">
-          <label htmlFor="q" className="sr-only">Cargo ou profissão</label>
-          <SearchIcon className="shrink-0 text-muted" />
-          <input
-            id="q"
-            name="q"
-            type="search"
-            placeholder="Procure um cargo, ex.: enfermeiro"
-            className="min-w-0 flex-1 bg-transparent text-ink outline-none placeholder:text-muted"
-          />
-          <button type="submit" className={`${pillPrimary} hidden md:inline-flex`}>
-            Pesquisar
-          </button>
-        </form>
-        <button type="submit" form="busca" className={`${pillPrimary} mt-3 md:hidden`}>
-          Pesquisar
-        </button>
-
-        <div className="mt-3 flex flex-wrap justify-center gap-x-8 gap-y-1 md:mt-4">
+        <HeroGrafico />
+        <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-1 md:mt-10">
           <Link href="/partilhar" className="flex min-h-11 items-center no-underline">Partilhar o meu salário ›</Link>
           <Link href="/metodologia" className="flex min-h-11 items-center no-underline">Como funciona ›</Link>
         </div>
-
-        <HeroGrafico />
       </section>
 
       {/* Público vs privado (bloco escuro) */}

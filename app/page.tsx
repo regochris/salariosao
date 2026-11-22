@@ -34,15 +34,19 @@ export default async function Inicio() {
 
       {/* Tiles */}
       <section className="grid grid-cols-1 gap-3 p-3 lg:grid-cols-2">
-        <Link href="/calculadora" className="card flex min-h-[440px] flex-col items-center gap-2 rounded-tile bg-surface px-5 pt-11 pb-6 text-center text-ink no-underline md:min-h-[520px] md:px-8 md:pt-14">
-          <h3 className="m-0 text-[28px] leading-8 font-bold tracking-[-0.5px] md:text-[40px] md:leading-[44px] md:tracking-[-0.8px]">Calculadora</h3>
-          <p className="m-0 text-[17px] text-muted md:text-[21px] md:leading-7">Do bruto ao líquido, em segundos.</p>
-          <span className="text-primary">Calcular ›</span>
-          <div className="mt-auto flex w-full max-w-[320px] flex-col gap-3 rounded-tile bg-bg p-6 text-left text-[15px]">
-            <div className="num flex justify-between"><span className="text-muted">Salário bruto</span><span className="font-semibold">— Kz</span></div>
-            <div className="num flex justify-between"><span className="text-muted">IRT</span><span>— Kz</span></div>
-            <div className="num flex justify-between"><span className="text-muted">Segurança Social (3%)</span><span>— Kz</span></div>
-            <div className="num flex justify-between border-t border-line pt-3 text-[19px]"><span className="font-semibold">Líquido</span><span className="font-bold">— Kz</span></div>
+        <Link href="/comparar" className="card flex min-h-[440px] flex-col items-center gap-2 rounded-tile bg-surface px-5 pt-11 pb-6 text-center text-ink no-underline md:min-h-[520px] md:px-8 md:pt-14">
+          <h3 className="m-0 text-[28px] leading-8 font-bold tracking-[-0.5px] md:text-[40px] md:leading-[44px] md:tracking-[-0.8px]">Comparar</h3>
+          <p className="m-0 text-[17px] text-muted md:text-[21px] md:leading-7">O seu salário face ao mercado. Para quem partilha.</p>
+          <span className="text-primary">Comparar ›</span>
+          <div aria-hidden className="mt-auto flex w-full max-w-[320px] flex-col gap-4 rounded-tile bg-bg p-6 text-left text-[15px]">
+            <span className="text-sm text-muted">O seu salário face ao mercado</span>
+            <div className="relative h-4 rounded-full bg-surface-2">
+              <div className="absolute inset-y-0 left-[12%] w-[76%] rounded-full bg-primary/20" />
+              <div className="absolute inset-y-0 left-[30%] w-[40%] rounded-full bg-primary/45" />
+              <span className="absolute top-1/2 left-[62%] block size-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-bg bg-ink" />
+            </div>
+            <div className="flex justify-between text-xs text-muted"><span>Abaixo</span><span>Na média</span><span>Acima</span></div>
+            <strong className="text-[19px] text-primary">Na média do mercado</strong>
           </div>
         </Link>
 

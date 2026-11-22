@@ -173,3 +173,37 @@ export async function novoAjuste(f: FormData) {
   if (error) voltar(f, "erro", error.message);
   voltar(f, "ok", "Decreto registado. As tabelas passam a usar os novos valores a partir da data de efeitos.");
 }
+
+// ---------- Inflação e salário mínimo ----------
+export async function guardarIpc(f: FormData) {
+  await exigirAdmin();
+  const mes = texto(f, "mes");
+  const h = Number(texto(f, "var_homologa").replace(",", "."));
+  const indiceEscrito = Number(texto(f, "indice").replace(",", "."));
+  if (!/^\d{4}-\d{2}$/.test(mes) || !Number.isFinite(h)) voltar(f, "erro", "Indique o mês e a variação homóloga.");
+  const supabase = await supabaseServer();
+  let indice = indiceEscrito > 0 ? indiceEscrito : 0;
+  if (!indice) {
+    // Sem índice: calcula a partir do mesmo mês do ano anterior.
+    const [a, m] = mes.split("-");
+    const { data } = await supabase.from("ipc").select("indice").eq("mes", `${Number(a) - 1}-${m}-01`).maybeSingle();
+    if (!data) voltar(f, "erro", "Falta o índice do mesmo mês do ano anterior. Escreva o índice publicado pelo INE.");
+    indice = Math.round(Number(data!.indice) * (1 + h / 100) * 100) / 100;
+  }
+  const { error } = await supabase.from("ipc").upsert({ mes: `${mes}-01`, indice, var_homologa: h, calculado: !(indiceEscrito > 0) }, { onConflict: "mes" });
+  if (error) voltar(f, "erro", error.message);
+  voltar(f, "ok", "Inflação do mês guardada.");
+}
+
+export async function guardarSalarioMinimo(f: FormData) {
+  await exigirAdmin();
+  const valor = Number(texto(f, "valor").replace(/\s/g, "").replace(",", "."));
+  const desde = texto(f, "valido_desde");
+  if (!(valor > 0) || !desde) voltar(f, "erro", "Indique o valor e a data de entrada em vigor.");
+  const supabase = await supabaseServer();
+  // Fecha o valor em vigor (fim exclusivo) e abre o novo.
+  await supabase.from("salario_minimo").update({ valido_ate: desde }).is("valido_ate", null).lt("valido_desde", desde);
+  const { error } = await supabase.from("salario_minimo").insert({ valor, valido_desde: desde, diploma: texto(f, "diploma") || null, nota: texto(f, "nota") || null });
+  if (error) voltar(f, "erro", error.message);
+  voltar(f, "ok", "Salário mínimo actualizado.");
+}

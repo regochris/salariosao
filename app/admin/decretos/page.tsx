@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { supabaseServer } from "@/lib/supabase/server";
 import { dataCurta } from "@/lib/admin";
 import { formatKz } from "@/lib/format";
-import { guardarComponente, guardarTaxa, novoAjuste } from "../accoes";
+import { guardarComponente, guardarIpc, guardarSalarioMinimo, guardarTaxa, novoAjuste } from "../accoes";
 import { Aviso, Bloco, Cabecalho, Selo, btnPrimario, btnQuieto, campo, rotulo } from "../ui";
 import { AjusteForm } from "./AjusteForm";
 
@@ -19,9 +19,13 @@ export default async function Decretos({ searchParams }: { searchParams: Promise
     supabase.from("taxas_cambio").select("mes, usd_kz, fonte").order("mes", { ascending: false }).limit(12),
     supabase.from("posicoes").select("id", { count: "exact", head: true }),
   ]);
+  const [{ data: ipc }, { data: minimos }] = await Promise.all([
+    supabase.from("ipc").select("mes, indice, var_homologa, calculado").order("mes", { ascending: false }).limit(6),
+    supabase.from("salario_minimo").select("valor, valido_desde, valido_ate, diploma").order("valido_desde", { ascending: false }),
+  ]);
 
   const hoje = new Date().toISOString().slice(0, 10);
-  const emVigor = (g: number) => valores?.find((v) => v.grupo_id === g && v.valido_desde <= hoje && (!v.valido_ate || v.valido_ate >= hoje));
+  const emVigor = (g: number) => valores?.find((v) => v.grupo_id === g && v.valido_desde <= hoje && (!v.valido_ate || v.valido_ate > hoje));
   const nome = (x: unknown) => (x as { nome: string } | null)?.nome;
 
   return (
@@ -94,6 +98,43 @@ export default async function Decretos({ searchParams }: { searchParams: Promise
                 </li>
               );
             })}
+          </ul>
+        </Bloco>
+
+        <Bloco titulo="Inflação (INE)">
+          <p className="m-0 mb-3 text-sm text-muted">Usada na ferramenta «Poder de compra». Actualize todos os meses quando o INE publicar o IPCN.</p>
+          <form action={guardarIpc} className="mb-4 flex flex-wrap items-end gap-2">
+            <input type="hidden" name="voltar" value="/admin/decretos" />
+            <label className="flex flex-col gap-1"><span className={rotulo}>Mês</span><input name="mes" type="month" required className={campo} /></label>
+            <label className="flex flex-col gap-1"><span className={rotulo}>Variação homóloga (%)</span><input name="var_homologa" required inputMode="decimal" placeholder="Ex.: 8,16" className={campo} /></label>
+            <label className="flex flex-col gap-1"><span className={rotulo}>Índice (opcional)</span><input name="indice" inputMode="decimal" placeholder="Calculado se vazio" className={campo} /></label>
+            <button className={btnPrimario}>Guardar mês</button>
+          </form>
+          <ul className="num m-0 list-none p-0 text-sm">
+            {(ipc ?? []).map((p) => (
+              <li key={p.mes} className="flex justify-between border-b border-line py-2 last:border-b-0">
+                <span>{p.mes.slice(0, 7)}{p.calculado && <span className="ml-2 text-xs text-muted">(índice calculado)</span>}</span>
+                <span>{Number(p.var_homologa).toLocaleString("pt-AO")}% · índice {Number(p.indice).toLocaleString("pt-AO")}</span>
+              </li>
+            ))}
+          </ul>
+        </Bloco>
+
+        <Bloco titulo="Salário mínimo nacional">
+          <form action={guardarSalarioMinimo} className="mb-4 grid gap-2 md:grid-cols-[1fr_1fr_2fr_auto] md:items-end">
+            <input type="hidden" name="voltar" value="/admin/decretos" />
+            <label className="flex flex-col gap-1"><span className={rotulo}>Novo valor (Kz)</span><input name="valor" required inputMode="numeric" className={campo} /></label>
+            <label className="flex flex-col gap-1"><span className={rotulo}>Em vigor desde</span><input name="valido_desde" type="date" required className={campo} /></label>
+            <label className="flex flex-col gap-1"><span className={rotulo}>Diploma</span><input name="diploma" placeholder="Ex.: Decreto Presidencial n.º …" className={campo} /></label>
+            <button className={btnPrimario}>Guardar</button>
+          </form>
+          <ul className="num m-0 list-none p-0 text-sm">
+            {(minimos ?? []).map((m) => (
+              <li key={m.valido_desde} className="flex flex-wrap justify-between gap-2 border-b border-line py-2 last:border-b-0">
+                <span>{formatKz(Number(m.valor))} {!m.valido_ate && <Selo texto="Em vigor" cor="bg-success/15 text-success" />}</span>
+                <span className="text-muted">{dataCurta(m.valido_desde)}{m.valido_ate ? ` – ${dataCurta(m.valido_ate)}` : ""}{m.diploma ? ` · ${m.diploma}` : ""}</span>
+              </li>
+            ))}
           </ul>
         </Bloco>
 

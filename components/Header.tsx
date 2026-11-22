@@ -9,7 +9,7 @@ import { SearchIcon } from "./Icons";
 const links = [
   { href: "/salarios", label: "Salários" },
   { href: "/funcao-publica", label: "Função pública" },
-  { href: "/calculadora", label: "Calculadora" },
+  { href: "/comparar", label: "Comparar" },
   { href: "/metodologia", label: "Metodologia" },
 ];
 

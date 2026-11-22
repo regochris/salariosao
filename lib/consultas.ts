@@ -62,14 +62,31 @@ export async function dadosProfissao(slug: string) {
   };
 }
 
-export type LinhaTabela = { tabela_id: number; anexo: string; tabela: string; carreira: string; categoria: string; variante: string; indice: number | null; vencimento_base: number; diploma: string };
+export type LinhaTabela = { tabela_id: number; carreira_id: number; posicao_id: number; anexo: string; tabela: string; carreira: string; categoria: string; variante: string; indice: number | null; vencimento_base: number; diploma: string };
 
 export async function tabelaFuncaoPublica(): Promise<LinhaTabela[]> {
   const supabase = await supabaseServer();
   const { data } = await supabase
     .from("tabela_vigente")
-    .select("tabela_id, anexo, tabela, carreira, carreira_id, categoria, ordem, variante, indice, vencimento_base, diploma")
+    .select("tabela_id, anexo, tabela, carreira, carreira_id, categoria, ordem, posicao_id, variante, indice, vencimento_base, diploma")
     .order("tabela_id").order("carreira_id").order("ordem")
     .limit(2000);
   return (data ?? []).map((r) => ({ ...r, indice: num(r.indice), vencimento_base: Number(r.vencimento_base) })) as LinhaTabela[];
+}
+
+export type PontoIpc = { mes: string; indice: number; var_homologa: number | null; calculado: boolean };
+
+// Índice de preços (INE) mês a mês, do mais antigo ao mais recente.
+export async function serieIpc(): Promise<PontoIpc[]> {
+  const supabase = await supabaseServer();
+  const { data } = await supabase.from("ipc").select("mes, indice, var_homologa, calculado").order("mes").limit(1000);
+  return (data ?? []).map((r) => ({ mes: r.mes as string, indice: Number(r.indice), var_homologa: num(r.var_homologa), calculado: Boolean(r.calculado) }));
+}
+
+export type SalarioMinimo = { valor: number; valido_desde: string; valido_ate: string | null; diploma: string | null; nota: string | null };
+
+export async function salariosMinimos(): Promise<SalarioMinimo[]> {
+  const supabase = await supabaseServer();
+  const { data } = await supabase.from("salario_minimo").select("valor, valido_desde, valido_ate, diploma, nota").order("valido_desde");
+  return (data ?? []).map((r) => ({ ...r, valor: Number(r.valor) })) as SalarioMinimo[];
 }

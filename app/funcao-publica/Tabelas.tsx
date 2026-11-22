@@ -79,9 +79,6 @@ export function Tabelas({ linhas }: { linhas: LinhaTabela[] }) {
         </span>
         <span className="text-accent">›</span>
       </Link>
-      <p className="m-0 px-2 text-xs text-muted">
-        Vencimento base oficial. Subsídios (isolamento, risco, turno, chefia) variam por órgão e não estão incluídos.
-      </p>
     </>
   );
 }

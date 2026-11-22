@@ -26,12 +26,13 @@ export default async function Decretos({ searchParams }: { searchParams: Promise
 
   const hoje = new Date().toISOString().slice(0, 10);
 
-  // Meses para escolher, do mais recente para trás (15 meses). Os já registados podem ser corrigidos.
+  // Meses para escolher: começa no mês anterior ao actual (o INE publica cada mês no início do seguinte)
+  // e recua 15 meses. A lista é calculada em cada visita, por isso avança sozinha. Os já registados podem ser corrigidos.
   const registados = new Set((ipc ?? []).map((p) => String(p.mes).slice(0, 7)));
   const { data: todosIpc } = await supabase.from("ipc").select("mes").gte("mes", `${Number(hoje.slice(0, 4)) - 2}-01-01`);
   for (const p of todosIpc ?? []) registados.add(String(p.mes).slice(0, 7));
   const mesesIpc = Array.from({ length: 15 }, (_, k) => {
-    const d = new Date(Number(hoje.slice(0, 4)), Number(hoje.slice(5, 7)) - 1 - k, 1);
+    const d = new Date(Number(hoje.slice(0, 4)), Number(hoje.slice(5, 7)) - 2 - k, 1);
     const valor = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
     return { valor, nome: d.toLocaleDateString("pt-AO", { month: "long", year: "numeric" }), registado: registados.has(valor) };
   });

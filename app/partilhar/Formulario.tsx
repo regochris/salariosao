@@ -13,6 +13,7 @@ export type Catalogo = {
   provincias: { id: number; nome: string }[];
   ramos: { id: number; nome: string }[];
   municipios: { id: number; nome: string; provincia_id: number; classe: string | null }[];
+  niveis: { nome: string; descricao: string | null }[];
   posicoes: {
     anexo: string; tabela: string; tabela_id: number; carreira: string; carreira_id: number;
     categoria: string; categoria_id: number; ordem: number; posicao_id: number; variante: string; vencimento_base: number;
@@ -35,13 +36,6 @@ const orgaos: [string, string][] = [
 // DP n.º 67/23, art. 5: nos municípios dos tipos C e D, isolamento e renda de casa = 30% do salário base.
 const PERCENTUAIS_PUBLICO = ["renda", "isolamento"];
 const PCT_DP_67_23 = 30;
-const niveis: [string, string][] = [
-  ["Estagiário", "Estagiário"],
-  ["Sem chefia", "Profissional, sem chefia"],
-  ["Sénior", "Sénior / especialista, sem chefia"],
-  ["Chefia", "Chefia (coordenador, supervisor, chefe de secção)"],
-  ["Direcção", "Direcção (chefe de departamento, director)"],
-];
 const subsidios: [string, string][] = [
   ["alimentacao", "Alimentação"], ["transporte", "Transporte"], ["renda", "Renda / habitação"], ["isolamento", "Isolamento / zona"],
   ["risco", "Risco"], ["turno", "Turno / nocturno"], ["comunicacoes", "Comunicações"], ["complemento_fixo", "Complemento fixo"],
@@ -79,6 +73,25 @@ function Campo({ id, nome, opcional, children }: { id: string; nome: string; opc
     </div>
   );
 }
+const OUTRO = "__outro";
+
+// Lista com a opção «Outro»: abre um campo para escrever, que segue como sugestão para o administrador.
+function OpcoesComOutro({ id, opcoes, placeholder }: { id: string; opcoes: [string | number, string][]; placeholder: string }) {
+  const [v, setV] = useState("");
+  return (
+    <>
+      <select id={id} name={id} required className={field} value={v} onChange={(e) => setV(e.target.value)}>
+        <option value="" disabled>Escolher…</option>
+        {opcoes.map((o) => <option key={o[0]} value={o[0]}>{o[1]}</option>)}
+        <option value={OUTRO}>Outro (escrever)</option>
+      </select>
+      {v === OUTRO && (
+        <input name={`${id}_outro`} required minLength={2} maxLength={120} placeholder={placeholder} aria-label={`${id} (outro)`} className={`${field} mt-2`} />
+      )}
+    </>
+  );
+}
+
 function Opcoes({ id, opcoes, required = true }: { id: string; opcoes: (string | [string | number, string])[]; required?: boolean }) {
   return (
     <select id={id} name={id} required={required} className={field} defaultValue="">
@@ -96,6 +109,7 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
   const [categoriaId, setCategoriaId] = useState<number | null>(null);
   const [posicaoId, setPosicaoId] = useState<number | null>(null);
   const [provinciaId, setProvinciaId] = useState<number | null>(null);
+  const [cargoNovo, setCargoNovo] = useState(false);
   const [municipioId, setMunicipioId] = useState<number | null>(null);
   const [base, setBase] = useState(0);
   const [pct, setPct] = useState<Record<string, number>>({});
@@ -125,6 +139,8 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
     setAEnviar(true);
     const f = new FormData(formRef.current);
     const cargoTexto = String(f.get("cargo")).trim();
+    const outro = (k: string) => (f.get(k) === OUTRO ? String(f.get(`${k}_outro`) ?? "").trim() : "");
+    const areaOutro = outro("area"), ramoOutro = sector === "privado" ? outro("ramo") : "", nivelOutro = outro("nivel");
     const cargo = catalogo.cargos.find((c) => norm(c.nome) === norm(cargoTexto) || c.sinonimos.some((s) => norm(s) === norm(cargoTexto)));
     const supabase = supabaseBrowser();
     const municipio = catalogo.municipios.find((m) => m.id === Number(f.get("municipio")));
@@ -136,9 +152,11 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
         sector,
         cargo_id: cargo?.id ?? null,
         cargo_texto: cargoTexto,
-        nivel: f.get("nivel") || null,
-        area_id: Number(f.get("area")) || cargo?.area_id || null,
-        ramo_id: sector === "privado" ? Number(f.get("ramo")) || null : null,
+        nivel: nivelOutro || f.get("nivel") || null,
+        area_id: areaOutro ? cargo?.area_id ?? null : Number(f.get("area")) || cargo?.area_id || null,
+        area_texto: areaOutro || null,
+        ramo_id: sector === "privado" && !ramoOutro ? Number(f.get("ramo")) || null : null,
+        ramo_texto: ramoOutro || null,
         dimensao: sector === "privado" ? f.get("dimensao") || null : null,
         empresa_texto: String(f.get("empresa") ?? "").trim() || null,
         orgao_tipo: sector === "publico" ? f.get("orgao") || null : null,
@@ -185,7 +203,14 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
       .filter((c) => c.v > 0)
       .map((c) => ({ partilha_id: data.id, tipo: c.tipo, valor_mensal_kz: c.v, percentagem: c.percentagem }));
     const bens = f.getAll("beneficios").map((b) => ({ partilha_id: data.id, beneficio: String(b) }));
+    const sugestoes = [
+      !cargo ? { tipo: "cargo", texto: cargoTexto } : null,
+      areaOutro ? { tipo: "area", texto: areaOutro } : null,
+      ramoOutro ? { tipo: "ramo", texto: ramoOutro } : null,
+      nivelOutro ? { tipo: "nivel", texto: nivelOutro } : null,
+    ].filter((x): x is { tipo: string; texto: string } => x !== null).map((x) => ({ ...x, autor_id: autorId, partilha_id: data.id }));
     await Promise.all([
+      sugestoes.length ? supabase.from("sugestoes").insert(sugestoes) : null,
       comps.length ? supabase.from("partilha_componentes").insert(comps) : null,
       bens.length ? supabase.from("partilha_beneficios").insert(bens) : null,
     ]);
@@ -237,12 +262,16 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
       {/* Todos os passos ficam no formulário (escondidos) para não perder o que se escreveu. */}
       <div data-passo="1" hidden={passo !== 1} className="flex flex-col gap-5">
         <Campo id="cargo" nome="Cargo ou função">
-          <input id="cargo" name="cargo" required list="lista-cargos" placeholder="Ex.: Enfermeiro geral" className={field} />
+          <input id="cargo" name="cargo" required minLength={2} maxLength={120} list="lista-cargos" placeholder="Comece a escrever, ex.: enfermeiro" className={field}
+            onChange={(e) => setCargoNovo(e.target.value.trim().length > 2 && !catalogo.cargos.some((c) => norm(c.nome) === norm(e.target.value) || c.sinonimos.some((s) => norm(s) === norm(e.target.value))))} />
           <datalist id="lista-cargos">{catalogo.cargos.map((c) => <option key={c.id} value={c.nome} />)}</datalist>
+          <span className="text-xs leading-4 text-muted">
+            {cargoNovo ? "Este cargo ainda não está na lista. Pode continuar: enviamos como sugestão ao administrador." : "Escolha da lista que aparece ao escrever. Se não encontrar, escreva o nome do seu cargo."}
+          </span>
         </Campo>
-        <Campo id="area" nome="Área"><Opcoes id="area" opcoes={catalogo.areas.map((a) => [a.id, a.nome])} /></Campo>
+        <Campo id="area" nome="Área"><OpcoesComOutro id="area" opcoes={catalogo.areas.map((a) => [a.id, a.nome])} placeholder="Escreva a área" /></Campo>
         <Campo id="nivel" nome="Responsabilidade">
-          <Opcoes id="nivel" opcoes={niveis} />
+          <OpcoesComOutro id="nivel" opcoes={catalogo.niveis.map((n) => [n.nome, n.descricao ? `${n.nome} — ${n.descricao}` : n.nome])} placeholder="Descreva a sua responsabilidade" />
           <span className="text-xs leading-4 text-muted">Ex.: um professor ou enfermeiro sem cargo de chefia escolhe «Profissional, sem chefia». Um director de escola escolhe «Direcção».</span>
         </Campo>
       </div>
@@ -293,7 +322,7 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
           </>
         ) : (
           <>
-            <Campo id="ramo" nome="Ramo de actividade"><Opcoes id="ramo" opcoes={catalogo.ramos.map((r) => [r.id, r.nome])} /></Campo>
+            <Campo id="ramo" nome="Ramo de actividade"><OpcoesComOutro id="ramo" opcoes={catalogo.ramos.map((r) => [r.id, r.nome])} placeholder="Escreva o ramo da empresa" /></Campo>
             <Campo id="dimensao" nome="Dimensão da empresa"><Opcoes id="dimensao" opcoes={["Até 10 trabalhadores", "11 a 50", "51 a 250", "Mais de 250"]} /></Campo>
           </>
         )}

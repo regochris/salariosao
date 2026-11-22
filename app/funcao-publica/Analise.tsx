@@ -302,10 +302,21 @@ const CRITERIOS = [
 function Ranking({ carreiras }: { carreiras: Carreira[] }) {
   const [criterio, setCriterio] = useState<(typeof CRITERIOS)[number]["id"]>("topo");
   const [todas, setTodas] = useState(false);
+  const [busca, setBusca] = useState("");
   const cr = CRITERIOS.find((x) => x.id === criterio)!;
   // Carreiras de uma só categoria não têm progressão: ficam fora do ranking de crescimento.
   const lista = [...carreiras].filter((c) => criterio !== "crescimento" || c.degraus.length > 1).sort((a, b) => cr.valor(b) - cr.valor(a));
-  const mostrar = todas ? lista : lista.slice(0, 10);
+  // A posição é sempre a do ranking completo, mesmo quando se procura uma carreira.
+  // Empates partilham a posição: posição = 1 + número de carreiras com valor maior.
+  const comPosicao = lista.map((c) => {
+    const v = cr.valor(c);
+    const maiores = lista.filter((x) => cr.valor(x) > v + 0.005).length;
+    const empatadas = lista.filter((x) => Math.abs(cr.valor(x) - v) <= 0.005).length;
+    return { c, pos: maiores + 1, empate: empatadas > 1 };
+  });
+  const q = busca.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  const encontradas = q ? comPosicao.filter(({ c }) => `${c.nome} ${c.tabela}`.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(q)) : null;
+  const mostrar = encontradas ?? (todas ? comPosicao : comPosicao.slice(0, 10));
   const max = cr.valor(lista[0]) || 1;
 
   return (
@@ -318,18 +329,21 @@ function Ranking({ carreiras }: { carreiras: Carreira[] }) {
           </button>
         ))}
       </div>
+      <input type="search" value={busca} onChange={(e) => setBusca(e.target.value)} placeholder="Procurar uma carreira, ex.: professor" aria-label="Procurar carreira no ranking" className={field} />
+      {encontradas && encontradas.length === 0 && <p className="m-0 text-sm text-muted">Nenhuma carreira com esse nome.</p>}
       <ol className="m-0 flex list-none flex-col gap-2.5 p-0">
-        {mostrar.map((c, k) => (
+        {mostrar.map(({ c, pos, empate }) => (
           <li key={c.id} className="flex flex-col gap-1">
             <span className="flex justify-between gap-3 text-sm">
-              <span><span className="num mr-2 inline-block w-6 text-muted">{k + 1}.</span>{c.nome}</span>
+              <span><span className="num mr-2 inline-block w-9 text-muted" title={empate ? "Empatada com outras carreiras" : undefined}>{pos}.º{empate ? " =" : ""}</span>{c.nome}</span>
               <strong className="num shrink-0">{cr.mostrar(c)}</strong>
             </span>
-            <span className="ml-8 h-1.5 overflow-hidden rounded-full bg-surface-2"><span className="block h-full rounded-full bg-accent" style={{ width: `${(cr.valor(c) / max) * 100}%` }} /></span>
+            <span className="ml-11 h-1.5 overflow-hidden rounded-full bg-surface-2"><span className="block h-full rounded-full bg-accent" style={{ width: `${(cr.valor(c) / max) * 100}%` }} /></span>
           </li>
         ))}
       </ol>
-      {lista.length > 10 && (
+      <p className="m-0 text-xs text-muted">«=» indica carreiras com o mesmo valor, que partilham a posição.</p>
+      {!encontradas && lista.length > 10 && (
         <button type="button" onClick={() => setTodas((v) => !v)} className="self-start text-sm font-medium text-primary hover:text-primary-hover">
           {todas ? "Mostrar só as 10 primeiras" : `Ver todas (${lista.length})`}
         </button>

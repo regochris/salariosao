@@ -91,6 +91,7 @@
   --color-button-hover: var(--button-hover);
   --color-on-button: var(--on-button);
 
+  --font-serif: var(--font-instrument), Georgia, "Times New Roman", serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --radius-tile: 18px;
@@ -200,4 +201,32 @@ a:hover {
 @media (prefers-reduced-motion: reduce) {
   .hero-barra, .hero-marca { animation: none; }
   .barra { transition: none; }
+}
+
+/* Hero editorial: cartões a flutuar, selo a girar */
+.flutuar {
+  animation: flutuar 6s ease-in-out infinite;
+}
+.flutuar-2 {
+  animation: flutuar 7s ease-in-out 1.2s infinite;
+}
+@keyframes flutuar {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -8px; }
+}
+.girar {
+  animation: girar 24s linear infinite;
+}
+@keyframes girar {
+  to { rotate: 360deg; }
+}
+.vidro {
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  box-shadow: 0 12px 40px rgb(0 0 0 / 0.07), 0 1px 2px rgb(0 0 0 / 0.04);
+}
+@media (prefers-reduced-motion: reduce) {
+  .flutuar, .flutuar-2, .girar { animation: none; }
 }

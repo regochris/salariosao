@@ -6,9 +6,9 @@ const alturas = [14, 20, 28, 38, 50, 62, 74, 86, 96, 100, 94, 84, 72, 60, 48, 38
 const MEDIANA = 9;
 const FAIXA = [6, 13];
 
-export function HeroGrafico() {
+export function HeroGrafico({ className = "mt-12 md:mt-16", legenda = true }: { className?: string; legenda?: boolean }) {
   return (
-    <div aria-hidden className="hero-grafico relative mx-auto mt-12 w-full max-w-[720px] select-none md:mt-16">
+    <div aria-hidden className={`hero-grafico relative mx-auto w-full max-w-[720px] select-none ${className}`}>
       <div className="flex h-[120px] items-end gap-[3px] md:h-[160px] md:gap-1.5">
         {alturas.map((h, i) => {
           const naFaixa = i >= FAIXA[0] && i <= FAIXA[1];
@@ -30,11 +30,13 @@ export function HeroGrafico() {
         <span className="h-2 w-px bg-ink" />
       </div>
       <div className="h-px w-full bg-line" />
-      <div className="mt-2 flex justify-between text-[11px] leading-4 text-muted">
-        <span>Ganha menos</span>
-        <span>Metade das pessoas</span>
-        <span>Ganha mais</span>
-      </div>
+      {legenda && (
+        <div className="mt-2 flex justify-between text-[11px] leading-4 text-muted">
+          <span>Ganha menos</span>
+          <span>Metade das pessoas</span>
+          <span>Ganha mais</span>
+        </div>
+      )}
     </div>
   );
 }

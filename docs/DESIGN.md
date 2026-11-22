@@ -59,6 +59,8 @@ Todos os números salariais usam `font-variant-numeric: tabular-nums`, para os v
 
 Linhas de texto com 60 a 75 caracteres (`max-width: 68ch`).
 
+**Títulos de destaque (hero):** Instrument Serif 400, com a segunda linha em itálico ("Saiba quanto vale / *o seu trabalho.*"), 96 px no computador e 52 px no telemóvel, entrelinha 0,95. Só no topo das páginas principais; o resto do site usa a fonte do sistema.
+
 ## 3. Espaçamento e layout
 
 - Escala de 4 px: `4, 8, 12, 16, 24, 32, 48, 64, 96`.
@@ -103,6 +105,8 @@ Linhas de texto com 60 a 75 caracteres (`max-width: 68ch`).
 **Rodapé**: Metodologia, Privacidade, Contacto, redes sociais, "Dados agregados e anónimos".
 
 **Gráficos**: barras horizontais (mais legíveis no telemóvel) com valores escritos na barra, sem legenda separada quando bastam 2 cores. Os eixos usam `--border` e o texto `--text-muted`.
+
+**Hero editorial:** menu em pílula com borda ao centro e botão escuro "Partilhar salário ↗" à direita; título serifado; botão escuro (`--text` como fundo) + botão de contorno com ícone de play; gráfico de salários ao centro com cartões de vidro (`.vidro`: fundo translúcido, desfoque, sombra suave — a única excepção à regra "sem sombras"); cartões laterais ligados por linhas finas, selo circular a girar e notas nos cantos (só a partir de 1024 px). Animações suaves, desligadas com "reduzir movimento".
 
 ## 6. Imagem e ícones
 

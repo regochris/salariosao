@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HeroGrafico } from "@/components/HeroGrafico";
+import { Hero } from "@/components/Hero";
 import { RankingGrafico } from "@/components/RankingGrafico";
 import { maisPesquisados, sectorLabel } from "@/lib/dados";
 import { formatKz } from "@/lib/format";
@@ -10,22 +10,7 @@ export default function Inicio() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="flex flex-col items-center gap-2.5 px-5 pt-16 pb-14 text-center md:gap-3 md:pt-24 md:pb-22">
-        <p className="m-0 text-[17px] font-semibold text-primary md:text-[21px]">SaláriosAO</p>
-        <h1 className="m-0 max-w-[16ch] text-[40px] leading-[44px] font-bold tracking-[-1px] md:text-[64px] md:leading-[68px] md:tracking-[-1.4px]">
-          Saiba quanto vale o seu trabalho.
-        </h1>
-        <p className="m-0 mt-1 max-w-[34ch] text-[19px] leading-[26px] text-muted md:text-2xl md:leading-8">
-          Salários reais de Angola. Público e privado. Partilhados de forma anónima.
-        </p>
-
-        <HeroGrafico />
-        <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-1 md:mt-10">
-          <Link href="/partilhar" className="flex min-h-11 items-center no-underline">Partilhar o meu salário ›</Link>
-          <Link href="/metodologia" className="flex min-h-11 items-center no-underline">Como funciona ›</Link>
-        </div>
-      </section>
+      <Hero />
 
       {/* Público vs privado (bloco escuro) */}
       <section className="ink flex flex-col items-center gap-2 bg-bg px-5 py-16 text-center text-ink md:gap-3 md:py-22">

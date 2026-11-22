@@ -12,7 +12,7 @@ export type Catalogo = {
   cargos: { id: number; nome: string; sinonimos: string[]; area_id: number | null }[];
   provincias: { id: number; nome: string }[];
   ramos: { id: number; nome: string }[];
-  municipios: { id: number; nome: string; provincia_id: number }[];
+  municipios: { id: number; nome: string; provincia_id: number; classe: string | null }[];
   posicoes: {
     anexo: string; tabela: string; tabela_id: number; carreira: string; carreira_id: number;
     categoria: string; categoria_id: number; ordem: number; posicao_id: number; variante: string; vencimento_base: number;
@@ -32,8 +32,9 @@ const orgaos: [string, string][] = [
   ["ministerio", "Ministério"], ["governo_provincial", "Governo provincial"], ["administracao_municipal", "Administração municipal"],
   ["empresa_publica", "Empresa pública"], ["instituto_publico", "Instituto público"], ["outro", "Outro"],
 ];
-// No público, renda e isolamento são uma percentagem do vencimento base.
+// DP n.º 67/23, art. 5: nos municípios dos tipos C e D, isolamento e renda de casa = 30% do salário base.
 const PERCENTUAIS_PUBLICO = ["renda", "isolamento"];
+const PCT_DP_67_23 = 30;
 const niveis: [string, string][] = [
   ["Estagiário", "Estagiário"],
   ["Sem chefia", "Profissional, sem chefia"],
@@ -95,6 +96,7 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
   const [categoriaId, setCategoriaId] = useState<number | null>(null);
   const [posicaoId, setPosicaoId] = useState<number | null>(null);
   const [provinciaId, setProvinciaId] = useState<number | null>(null);
+  const [municipioId, setMunicipioId] = useState<number | null>(null);
   const [base, setBase] = useState(0);
   const [pct, setPct] = useState<Record<string, number>>({});
   const [aEnviar, setAEnviar] = useState(false);
@@ -107,6 +109,9 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
   const categorias = useMemo(() => [...new Map(catalogo.posicoes.filter((p) => p.carreira_id === carreiraId).map((p) => [p.categoria_id, p])).values()], [catalogo.posicoes, carreiraId]);
   const variantes = useMemo(() => catalogo.posicoes.filter((p) => p.categoria_id === categoriaId), [catalogo.posicoes, categoriaId]);
   const posicao = catalogo.posicoes.find((p) => p.posicao_id === (posicaoId ?? (variantes.length === 1 ? variantes[0].posicao_id : -1)));
+
+  const municipioSel = catalogo.municipios.find((m) => m.id === municipioId);
+  const incentivosCD = sector === "publico" && (municipioSel?.classe === "C" || municipioSel?.classe === "D");
 
   const passoValido = () => {
     const bloco = formRef.current?.querySelector<HTMLElement>(`[data-passo="${passo}"]`);
@@ -168,7 +173,7 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
     const baseKz = valor(f.get("base"));
     const comps = [
       ...subsidios.map(([k]) => {
-        if (sector === "publico" && PERCENTUAIS_PUBLICO.includes(k)) {
+        if (incentivosCD && PERCENTUAIS_PUBLICO.includes(k)) {
           const p = pct[k] ?? 0;
           return { tipo: k, v: Math.round((baseKz * p) / 100), percentagem: p || null };
         }
@@ -301,13 +306,13 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
       <div data-passo="3" hidden={passo !== 3} className="flex flex-col gap-5">
         <div className="grid grid-cols-2 gap-3">
           <Campo id="provincia" nome="Província">
-            <select id="provincia" name="provincia" required className={field} value={provinciaId ?? ""} onChange={(e) => setProvinciaId(Number(e.target.value))}>
+            <select id="provincia" name="provincia" required className={field} value={provinciaId ?? ""} onChange={(e) => { setProvinciaId(Number(e.target.value)); setMunicipioId(null); }}>
               <option value="" disabled>Escolher…</option>
               {catalogo.provincias.map((p) => <option key={p.id} value={p.id}>{p.nome}</option>)}
             </select>
           </Campo>
           <Campo id="municipio" nome="Município">
-            <select key={provinciaId ?? 0} id="municipio" name="municipio" required disabled={!provinciaId} className={`${field} disabled:opacity-50`} defaultValue="">
+            <select key={provinciaId ?? 0} id="municipio" name="municipio" required disabled={!provinciaId} className={`${field} disabled:opacity-50`} value={municipioId ?? ""} onChange={(e) => setMunicipioId(Number(e.target.value))}>
               <option value="" disabled>{provinciaId ? "Escolher…" : "Escolha a província"}</option>
               {municipiosDaProvincia.map((m) => <option key={m.id} value={m.id}>{m.nome}</option>)}
             </select>
@@ -343,21 +348,26 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
           </select>
         </Campo>
         <Campo id="ano" nome="Ano a que se refere"><Opcoes id="ano" opcoes={[[2026, "2026"], [2025, "2025"]]} /></Campo>
+        {incentivosCD && (
+          <div className="flex flex-col gap-1 rounded-[14px] bg-accent-soft p-4">
+            <p className="m-0 text-[15px] font-semibold">Incentivos do município {municipioSel?.nome} (tipo {municipioSel?.classe})</p>
+            <p className="m-0 text-[13px] leading-[18px] text-muted">Decreto Presidencial n.º 67/23: {PCT_DP_67_23}% do salário base. Marque os que recebe.</p>
+            {([["isolamento", "Subsídio de isolamento", ""], ["renda", "Subsídio de renda de casa", "Para quem não vivia nesta localidade antes de ser colocado."]] as const).map(([k, n, nota]) => (
+              <label key={k} className="flex min-h-11 items-start gap-2.5 pt-2">
+                <input type="checkbox" className="mt-0.5 size-5" checked={(pct[k] ?? 0) > 0} onChange={(e) => setPct({ ...pct, [k]: e.target.checked ? PCT_DP_67_23 : 0 })} />
+                <span className="flex flex-col">
+                  <span>{n} <span className="num text-muted">· ≈ {formatKz(Math.round((base * PCT_DP_67_23) / 100))}/mês</span></span>
+                  {nota && <span className="text-xs text-muted">{nota}</span>}
+                </span>
+              </label>
+            ))}
+          </div>
+        )}
         <p className="m-0 text-[15px] font-semibold">Subsídios mensais <span className="font-normal text-muted">(os que recebe)</span></p>
         <div className="grid grid-cols-2 gap-3">
-          {subsidios.map(([k, n]) =>
-            sector === "publico" && PERCENTUAIS_PUBLICO.includes(k) ? (
-              <Campo key={k} id={`pc-${k}`} nome={`${n} (% do base)`}>
-                <select id={`pc-${k}`} className={field} value={pct[k] ?? 0} onChange={(e) => setPct({ ...pct, [k]: Number(e.target.value) })}>
-                  <option value={0}>Não recebo</option>
-                  {[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100].map((p) => <option key={p} value={p}>{p}%</option>)}
-                </select>
-                {(pct[k] ?? 0) > 0 && <span className="num text-xs text-muted">≈ {formatKz(Math.round((base * pct[k]) / 100))} por mês</span>}
-              </Campo>
-            ) : (
-              <Campo key={k} id={`sb-${k}`} nome={n}>{dinheiro(`sb-${k}`)}</Campo>
-            ),
-          )}
+          {subsidios.filter(([k]) => !(incentivosCD && PERCENTUAIS_PUBLICO.includes(k))).map(([k, n]) => (
+            <Campo key={k} id={`sb-${k}`} nome={n}>{dinheiro(`sb-${k}`)}</Campo>
+          ))}
         </div>
         <label className="flex min-h-11 items-center gap-2.5"><input type="checkbox" name="ferias" className="size-5" /> Recebo subsídio de férias</label>
         <label className="flex min-h-11 items-center gap-2.5"><input type="checkbox" name="decimo" className="size-5" /> Recebo 13.º mês (subsídio de Natal)</label>

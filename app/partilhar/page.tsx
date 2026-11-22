@@ -42,7 +42,7 @@ export default async function Partilhar() {
     supabase.from("provincias").select("id, nome").order("nome"),
     supabase.from("ramos").select("id, nome").order("id"),
     supabase.from("tabela_vigente").select("anexo, tabela, tabela_id, carreira, carreira_id, categoria, categoria_id, ordem, posicao_id, variante, vencimento_base").order("tabela_id").order("carreira_id").order("ordem"),
-    supabase.from("municipios").select("id, nome, provincia_id").order("nome").limit(1000),
+    supabase.from("municipios").select("id, nome, provincia_id, classe").order("nome").limit(1000),
   ]);
 
   const catalogo: Catalogo = {

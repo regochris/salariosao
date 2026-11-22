@@ -21,7 +21,7 @@ export default async function FuncaoPublica({ searchParams }: { searchParams: Pr
   const diploma = linhas[0]?.diploma ?? null;
   const inc = (n: string) => Number(incentivos?.find((i) => i.nome === n)?.valor ?? 0);
   const diplomaIncentivos = (incentivos?.[0]?.diplomas as unknown as { numero: string } | null)?.numero ?? null;
-  const aba: AbaFP = t === "comparar" || t === "ranking" || t === "tabelas" ? t : "simulador";
+  const aba: AbaFP = t === "simulador" || t === "comparar" || t === "ranking" ? t : "tabelas";
 
   return (
     <div className="mx-auto flex max-w-[860px] flex-col gap-5 px-3 pb-16">

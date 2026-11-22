@@ -25,6 +25,16 @@ export default async function Decretos({ searchParams }: { searchParams: Promise
   ]);
 
   const hoje = new Date().toISOString().slice(0, 10);
+
+  // Meses para escolher, do mais recente para trás (15 meses). Os já registados podem ser corrigidos.
+  const registados = new Set((ipc ?? []).map((p) => String(p.mes).slice(0, 7)));
+  const { data: todosIpc } = await supabase.from("ipc").select("mes").gte("mes", `${Number(hoje.slice(0, 4)) - 2}-01-01`);
+  for (const p of todosIpc ?? []) registados.add(String(p.mes).slice(0, 7));
+  const mesesIpc = Array.from({ length: 15 }, (_, k) => {
+    const d = new Date(Number(hoje.slice(0, 4)), Number(hoje.slice(5, 7)) - 1 - k, 1);
+    const valor = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+    return { valor, nome: d.toLocaleDateString("pt-AO", { month: "long", year: "numeric" }), registado: registados.has(valor) };
+  });
   const emVigor = (g: number) => valores?.find((v) => v.grupo_id === g && v.valido_desde <= hoje && (!v.valido_ate || v.valido_ate > hoje));
   const nome = (x: unknown) => (x as { nome: string } | null)?.nome;
 
@@ -105,7 +115,11 @@ export default async function Decretos({ searchParams }: { searchParams: Promise
           <p className="m-0 mb-3 text-sm text-muted">Usada na ferramenta «Poder de compra». Actualize todos os meses quando o INE publicar o IPCN.</p>
           <form action={guardarIpc} className="mb-4 flex flex-wrap items-end gap-2">
             <input type="hidden" name="voltar" value="/admin/decretos" />
-            <label className="flex flex-col gap-1"><span className={rotulo}>Mês</span><input name="mes" type="month" required className={campo} /></label>
+            <label className="flex flex-col gap-1"><span className={rotulo}>Mês</span>
+              <select name="mes" required defaultValue={mesesIpc.find((m) => !m.registado)?.valor ?? mesesIpc[0]?.valor} className={campo}>
+                {mesesIpc.map((m) => <option key={m.valor} value={m.valor}>{m.nome}{m.registado ? " (já registado — substituir)" : ""}</option>)}
+              </select>
+            </label>
             <label className="flex flex-col gap-1"><span className={rotulo}>Variação homóloga (%)</span><input name="var_homologa" required inputMode="decimal" placeholder="Ex.: 8,16" className={campo} /></label>
             <label className="flex flex-col gap-1"><span className={rotulo}>Índice (opcional)</span><input name="indice" inputMode="decimal" placeholder="Calculado se vazio" className={campo} /></label>
             <button className={btnPrimario}>Guardar mês</button>

@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { supabaseBrowser } from "@/lib/supabase/client";
 import { SearchIcon } from "./Icons";
 
 const links = [
@@ -13,6 +15,13 @@ const links = [
 
 export function Header() {
   const path = usePathname();
+  const [comSessao, setComSessao] = useState(false);
+  useEffect(() => {
+    const supabase = supabaseBrowser();
+    supabase.auth.getUser().then(({ data }) => setComSessao(Boolean(data.user)));
+    const { data } = supabase.auth.onAuthStateChange((_e, sessao) => setComSessao(Boolean(sessao)));
+    return () => data.subscription.unsubscribe();
+  }, []);
   return (
     <header className="sticky top-0 z-20 bg-bg/80 backdrop-blur-xl backdrop-saturate-150">
       <div className="mx-auto grid min-h-16 max-w-[1200px] grid-cols-[1fr_auto_1fr] items-center gap-4 px-4 md:px-8">
@@ -40,8 +49,8 @@ export function Header() {
           <Link href="/salarios" aria-label="Pesquisar salários" className="plain flex size-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-surface">
             <SearchIcon size={18} />
           </Link>
-          <Link href="/entrar" className="plain hidden h-10 items-center px-3 text-[15px] text-ink hover:text-primary md:flex">
-            Entrar
+          <Link href={comSessao ? "/conta" : "/entrar"} className="plain hidden h-10 items-center px-3 text-[15px] text-ink hover:text-primary md:flex">
+            {comSessao ? "A minha conta" : "Entrar"}
           </Link>
           <Link href="/partilhar" className="btn hidden h-10 items-center gap-1.5 rounded-pill bg-ink px-4 text-[15px] font-medium text-bg hover:bg-ink/85 hover:text-bg sm:inline-flex">
             Partilhar salário

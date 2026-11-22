@@ -7,7 +7,7 @@ export default async function RegistoPage({ searchParams }: { searchParams: Prom
   const { perfil } = await searchParams;
   return (
     <div className="mx-auto max-w-[480px] px-5 pt-10 pb-16">
-      <Registo inicial={perfil === "estudante" ? "estudante" : "trabalho"} />
+      <Registo inicial={perfil === "estudante" ? "estudante" : "trabalhador"} />
     </div>
   );
 }

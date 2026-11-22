@@ -1,12 +1,17 @@
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { RankingGrafico } from "@/components/RankingGrafico";
-import { maisPesquisados, sectorLabel } from "@/lib/dados";
+import { listaCargos, rankingCargos } from "@/lib/consultas";
 import { formatKz } from "@/lib/format";
 import { pillOutline, pillPrimary } from "@/lib/ui";
 
 
-export default function Inicio() {
+export const revalidate = 300;
+
+export default async function Inicio() {
+  const [ranking, cargos] = await Promise.all([rankingCargos(6), listaCargos()]);
+  // Mais pesquisados: por agora, os cargos com mais partilhas.
+  const maisPesquisados = [...cargos].sort((a, b) => b.n - a.n).slice(0, 6);
 
   return (
     <>
@@ -19,7 +24,7 @@ export default function Inicio() {
         </h2>
         <p className="m-0 text-[19px] leading-[26px] text-muted md:text-2xl md:leading-8">As profissões mais bem pagas, lado a lado.</p>
         <div className="mt-8 flex w-full justify-center md:mt-12">
-          <RankingGrafico />
+          <RankingGrafico dados={ranking} />
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-3 md:mt-10">
           <Link href="/salarios" className={pillPrimary}>Ver todas as profissões</Link>
@@ -76,7 +81,7 @@ export default function Inicio() {
               <Link href={`/salarios/${d.slug}`} className="row num flex flex-wrap justify-between gap-2 py-4 text-ink no-underline md:py-5 md:text-[19px]">
                 <span className="font-semibold">{d.cargo}</span>
                 <span>
-                  <span className="mr-4 text-[15px] text-muted">{sectorLabel[d.sector]}</span>
+                  <span className="mr-4 text-[15px] text-muted">{d.n > 0 ? `${d.n} resp.` : d.area}</span>
                   {formatKz(d.mediana)} ›
                 </span>
               </Link>

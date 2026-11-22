@@ -1,14 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { rankingExemplo, rankingPagas } from "@/lib/dados";
+import { rankingExemplo } from "@/lib/dados";
+import type { Ranking } from "@/lib/consultas";
 import { formatKz } from "@/lib/format";
 
 type Vista = "privado" | "publico" | "ambos";
 
 // Gráfico de barras horizontais animado: profissões mais bem pagas, público vs privado.
 // As barras crescem quando o gráfico entra no ecrã (uma vez), uma a seguir à outra.
-export function RankingGrafico() {
+export function RankingGrafico({ dados = [] }: { dados?: Ranking[] }) {
+  const rankingPagas = dados;
   const ref = useRef<HTMLDivElement>(null);
   const [visivel, setVisivel] = useState(false);
   const [vista, setVista] = useState<Vista>("ambos");

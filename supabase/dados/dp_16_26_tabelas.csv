@@ -1,0 +1,638 @@
+anexo;grupo_ou_estrutura;carreira;categoria_ou_cargo;variante;indice;vencimento_base;representacao_ou_suplemento;remuneracao_total
+ANEXO I;;;Presidente da República;;;924 187,45;554 512,47;1 478 699,93
+ANEXO I;;;Vice-Presidente da República;;;785 559,34;432 057,63;1 217 616,97
+ANEXO I;;;Ministro de Estado;;;739 349,96;369 674,98;1 109 024,94
+ANEXO I;;;Ministro, Governador Provincial;;;693 140,59;311 913,27;1 005 053,86
+ANEXO I;;;Secretário de Estado, Vice-Ministro e Vice-Governador Provincial;;;646 931,22;258 772,49;905 703,70
+ANEXO II;;;Juiz Presidente do Tribunal Supremo;;;831 600,00;374 220,00;1 205 820,00
+ANEXO II;;;Vice-Presidente do Tribunal Supremo;;;785 400,00;314 160,00;1 099 560,00
+ANEXO II;;;Juiz Conselheiro;;;785 400,00;314 160,00;1 099 560,00
+ANEXO II;;;Vogal do Conselheiro Superior da Magistratura Judicial;;;785 400,00;314 160,00;1 099 560,00
+ANEXO II;;;Juiz Presidente do Tribunal da Relação;;;739 200,00;258 720,00;997 920,00
+ANEXO II;;;Vice-Presidente do Tribunal da Relação;;;729 303,96;218 791,19;948 095,15
+ANEXO II;;;Juiz Desembargador;;;720 507,48;216 150,08;936 657,56
+ANEXO II;;;Juiz de Direito com mais de 10 anos de serviço;;;693 000,00;173 250,00;866 250,00
+ANEXO II;;;Juiz de Direito com mais de 5 anos de serviço;;;646 800,00;161 700,00;808 500,00
+ANEXO II;;;Juiz de Direito com menos de 5 anos de serviço;;;554 400,00;138 600,00;693 000,00
+ANEXO II;;;Juiz Municipal com mais de 10 anos de serviço;;;508 200,00;101 640,00;609 840,00
+ANEXO II;;;Juiz Municipal com mais de 5 anos de serviço;;;456 502,20;91 300,44;547 802,64
+ANEXO III;;;Procurador Geral da República;;;831 600,00;374 220,00;1 205 820,00
+ANEXO III;;;Vice-Procurador Geral da República;;;785 400,00;314 160,00;1 099 560,00
+ANEXO III;;;Procurador Geral Adjunto da República;;;785 400,00;314 160,00;1 099 560,00
+ANEXO III;;;Vogal do Conselheiro Superior da Magistratura do Ministério Público;;;785 400,00;314 160,00;1 099 560,00
+ANEXO III;;;Sub-Procurador Geral da República - Coordenador;;;739 200,00;258 720,00;997 920,00
+ANEXO III;;;Sub-Procurador Geral da República - Coordenador Adjunto;;;729 300,26;218 790,08;948 090,34
+ANEXO III;;;Sub-Procurador Geral da República;;;720 507,48;216 150,08;936 657,56
+ANEXO III;;;Procurador da República com mais de 10 anos de serviço;;;693 000,00;173 250,00;866 250,00
+ANEXO III;;;Procurador da República com mais de 5 anos de serviço;;;646 800,00;161 700,00;808 500,00
+ANEXO III;;;Procurador da República com menos de 5 anos de serviço;;;554 400,00;138 600,00;693 000,00
+ANEXO III;;;Procurador Adjunto da República;;;508 200,00;101 640,00;609 840,00
+ANEXO IV;DIRECÇÃO;Central;Director Nacional;;220;569 088,51;113 817,70;682 906,21
+ANEXO IV;DIRECÇÃO;Central;Secretário Geral;;220;569 088,51;113 817,70;682 906,21
+ANEXO IV;DIRECÇÃO;Central;Director de Gabinete do Membro do Governo;;220;569 088,51;113 817,70;682 906,21
+ANEXO IV;DIRECÇÃO;Central;Secretário Geral da UAN;;220;569 088,51;113 817,70;682 906,21
+ANEXO IV;DIRECÇÃO;Central;Inspector Geral;;220;569 088,51;113 817,70;682 906,21
+ANEXO IV;DIRECÇÃO;Central;Director Geral de Instituição Pública;;220;569 088,51;113 817,70;682 906,21
+ANEXO IV;DIRECÇÃO;Central;Director de Gabinete Jurídico;;220;569 088,51;113 817,70;682 906,21
+ANEXO IV;DIRECÇÃO;Central;Director de Gab. Estudos Planeamento e Estatística;;220;569 088,51;113 817,70;682 906,21
+ANEXO IV;DIRECÇÃO;Central;Director de Gabinete de Intercâmbio Internacional;;220;569 088,51;113 817,70;682 906,21
+ANEXO IV;DIRECÇÃO;Central;Director Geral Adjunto de Instituição Pública;;200;517 353,19;103 470,64;620 823,83
+ANEXO IV;DIRECÇÃO;Central;Inspector Geral Adjunto;;200;517 353,19;103 470,64;620 823,83
+ANEXO IV;DIRECÇÃO;Central;Director dos Serviços da Reitoria;;200;517 353,19;103 470,64;620 823,83
+ANEXO IV;DIRECÇÃO;Central;Director Geral do Centro Social da UAN;;200;517 353,19;103 470,64;620 823,83
+ANEXO IV;DIRECÇÃO;Local;Delegado Provincial;;200;517 353,19;103 470,64;620 823,83
+ANEXO IV;DIRECÇÃO;Local;Director Provincial/Director de Gabinete Provincial;;200;517 353,19;103 470,64;620 823,83
+ANEXO IV;DIRECÇÃO;Local;Inspector Provincial;;200;517 353,19;103 470,64;620 823,83
+ANEXO IV;DIRECÇÃO;Local;Administrador Municipal;;200;517 353,19;103 470,64;620 823,83
+ANEXO IV;DIRECÇÃO;Local;Administrador Municipal Adjunto;;170;439 750,21;87 950,04;527 700,25
+ANEXO IV;DIRECÇÃO;Local;Administrador Comunal;;170;439 750,21;87 950,04;527 700,25
+ANEXO IV;DIRECÇÃO;Local;Administrador Comunal Adjunto;;140;362 147,23;72 429,45;434 576,68
+ANEXO IV;CHEFIA;Central;Chefe de Departamento;;190;491 485,53;;491 485,53
+ANEXO IV;CHEFIA;Central;Director Adjunto de Gabinete do Membro do Governo;;190;491 485,53;;491 485,53
+ANEXO IV;CHEFIA;Central;Director do Gabinete de Relações Públicas da UAN;;190;491 485,53;;491 485,53
+ANEXO IV;CHEFIA;Central;Chefe do Centro de Documentação e Informação;;190;491 485,53;;491 485,53
+ANEXO IV;CHEFIA;Central;Inspector Chefe de 1ª Classe;;190;491 485,53;;491 485,53
+ANEXO IV;CHEFIA;Central;Inspector Chefe de 2.ª Classe;;170;439 750,21;;439 750,21
+ANEXO IV;CHEFIA;Central;Chefe de Divisão;;170;439 750,21;;439 750,21
+ANEXO IV;CHEFIA;Central;Chefe de Repartição;;150;388 014,89;;388 014,89
+ANEXO IV;CHEFIA;Central;Chefe do Gabinete do Vice-Reitor;;150;388 014,89;;388 014,89
+ANEXO IV;CHEFIA;Central;Chefe de Secção;;140;362 147,23;;362 147,23
+ANEXO IV;CHEFIA;Local;Chefe de Departamento Provincial;;190;491 485,53;;491 485,53
+ANEXO IV;CHEFIA;Local;Inspector Chefe de 1ª Classe;;190;491 485,53;;491 485,53
+ANEXO IV;CHEFIA;Local;Inspector Chefe de 2ª Classe;;170;439 750,21;;439 750,21
+ANEXO IV;CHEFIA;Local;Director Municipal;;170;439 750,21;;439 750,21
+ANEXO IV;CHEFIA;Local;Chefe de Secção Provincial;;140;362 147,23;;362 147,23
+ANEXO IV;CHEFIA;Local;Chefe de Secção Municipal;;140;362 147,23;;362 147,23
+ANEXO IV;CHEFIA;Local;Chefe de Secção Comunal;;120;310 411,91;;310 411,91
+ANEXO V;TÉCNICO SUPERIOR;;Assessor Principal;;960;579 055,80;;
+ANEXO V;TÉCNICO SUPERIOR;;Primeiro Assessor;;900;542 864,82;;
+ANEXO V;TÉCNICO SUPERIOR;;Assessor;;840;506 673,83;;
+ANEXO V;TÉCNICO SUPERIOR;;Técnico Superior Principal;;760;458 419,18;;
+ANEXO V;TÉCNICO SUPERIOR;;Técnico Superior de 1ª Classe;;680;410 164,53;;
+ANEXO V;TÉCNICO SUPERIOR;;Técnico Superior de 2ª Classe;;600;361 909,88;;
+ANEXO V;TÉCNICO;;Técnico Especialista Principal;;540;325 718,89;;
+ANEXO V;TÉCNICO;;Técnico Especialista de 1ª Classe;;480;289 527,90;;
+ANEXO V;TÉCNICO;;Técnico Especialista de 2ª Classe;;420;253 336,91;;
+ANEXO V;TÉCNICO;;Técnico de 1ª Classe;;400;241 273,25;;
+ANEXO V;TÉCNICO;;Técnico de 2ª Classe;;370;223 177,76;;
+ANEXO V;TÉCNICO;;Técnico de 3ª Classe;;360;217 145,93;;
+ANEXO V;TÉCNICO MÉDIO;;Técnico Médio Principal de 1ª Classe;;350;211 114,10;;
+ANEXO V;TÉCNICO MÉDIO;;Técnico Médio Principal de 2ª Classe;;340;205 082,26;;
+ANEXO V;TÉCNICO MÉDIO;;Técnico Médio Principal de 3ª Classe;;300;180 954,94;;
+ANEXO V;TÉCNICO MÉDIO;;Técnico Médio de 1ª Classe;;280;168 891,28;;
+ANEXO V;TÉCNICO MÉDIO;;Técnico Médio de 2ª Classe;;260;156 827,61;;
+ANEXO V;TÉCNICO MÉDIO;;Técnico Médio de 3ª Classe;;240;144 763,95;;
+ANEXO V;ADMINISTRATIVO;;Oficial Administrativo Principal;;580;141 951,04;;
+ANEXO V;ADMINISTRATIVO;;Primeiro Oficial;;575;140 727,33;;
+ANEXO V;ADMINISTRATIVO;;Segundo Oficial;;540;132 161,32;;
+ANEXO V;ADMINISTRATIVO;;Terceiro Oficial;;520;127 266,45;;
+ANEXO V;ADMINISTRATIVO;;Aspirante;;500;122 371,59;;
+ANEXO V;ADMINISTRATIVO;;Escriturário-Dactilógrafo;;480;117 476,73;;
+ANEXO V;TESOUREIRO;;Tesoureiro Principal;;575;140 727,33;;
+ANEXO V;TESOUREIRO;;Tesoureiro de 1ª Classe;;540;132 161,32;;
+ANEXO V;TESOUREIRO;;Tesoureiro de 2ª Classe;;520;127 266,45;;
+ANEXO V;AUXILIARES;;Motorista de Pesados Principal;;540;132 161,32;;
+ANEXO V;AUXILIARES;;Motorista de Pesados de 1ª Classe;;520;127 266,45;;
+ANEXO V;AUXILIARES;;Motorista de Pesados de 2ª Classe;;500;122 371,59;;
+ANEXO V;AUXILIARES;;Motorista de Ligeiros Principal;;520;127 266,45;;
+ANEXO V;AUXILIARES;;Motorista de Ligeiros de 1ª Classe;;500;122 371,59;;
+ANEXO V;AUXILIARES;;Motorista de Ligeiros de 2ª Classe;;480;117 476,73;;
+ANEXO V;AUXILIARES;;Telefonista Principal;;480;117 476,73;;
+ANEXO V;AUXILIARES;;Telefonista de 1ª Classe;;460;112 581,86;;
+ANEXO V;AUXILIARES;;Telefonista de 2ª Classe;;440;107 687,00;;
+ANEXO V;AUXILIARES;;Auxiliar Administrativo Principal;;460;112 581,86;;
+ANEXO V;AUXILIARES;;Auxiliar Administrativo de 1ª Classe;;440;107 687,00;;
+ANEXO V;AUXILIARES;;Auxiliar Administrativo de 2ª Classe;;420;102 792,14;;
+ANEXO V;AUXILIARES;;Auxiliar de Limpeza Principal;;440;107 687,00;;
+ANEXO V;AUXILIARES;;Auxiliar de Limpeza de 1ª Classe;;420;102 792,14;;
+ANEXO V;AUXILIARES;;Auxiliar de Limpeza de 2ª Classe;;400;97 897,27;;
+ANEXO V;OPERÁRIO QUALIFICADO;;Encarregado;;520;127 266,45;;
+ANEXO V;OPERÁRIO QUALIFICADO;;Operário Qualificado de 1ª Classe;;500;122 371,59;;
+ANEXO V;OPERÁRIO QUALIFICADO;;Operário Qualificado de 2ª Classe;;480;117 476,73;;
+ANEXO V;OPERÁRIO NÃO QUALIFICADO;;Encarregado;;460;112 581,86;;
+ANEXO V;OPERÁRIO NÃO QUALIFICADO;;Operário Não Qualificado de 1ª Classe;;440;107 687,00;;
+ANEXO V;OPERÁRIO NÃO QUALIFICADO;;Operário Não Qualificado de 2ª Classe;;420;102 792,14;;
+ANEXO VI;;;Professor Catedrático;;1120;675 565,11;;
+ANEXO VI;;;Professor Associado;;1020;615 246,79;;
+ANEXO VI;;;Professor Auxiliar;;960;579 055,80;;
+ANEXO VI;;;Assistente;;900;542 864,82;;
+ANEXO VI;;;Assistente Estagiário;;760;458 419,18;;
+ANEXO VII;;;Investigador Coordenador;;1120;675 565,11;;
+ANEXO VII;;;Investigador Principal;;1020;615 246,79;;
+ANEXO VII;;;Investigador Auxiliar;;960;579 055,80;;
+ANEXO VII;;;Assistente de Investigação;;900;542 864,82;;
+ANEXO VII;;;Estagiário de Investigação;;760;458 419,18;;
+ANEXO VIII;;;Embaixador;;1020;615 246,79;;
+ANEXO VIII;;;Ministro Conselheiro;;960;579 055,80;;
+ANEXO VIII;;;Conselheiro;;900;542 864,82;;
+ANEXO VIII;;;1º Secretário;;840;506 673,83;;
+ANEXO VIII;;;2º Secretário;;760;458 419,18;;
+ANEXO VIII;;;3º Secretário;;680;410 164,53;;
+ANEXO VIII;;;Adido;;600;361 909,88;;
+ANEXO IX;Direcção e Chefia;;Director de Serviço de Fiscalização e Controlo;;220;569 088,51;113 817,70;682 906,21
+ANEXO IX;Direcção e Chefia;;Director dos Serviços Administrativos;;220;569 088,51;113 817,70;682 906,21
+ANEXO IX;Direcção e Chefia;;Director de Gabinete do Juiz Conselheiro Presidente;;220;569 088,51;113 817,70;682 906,21
+ANEXO IX;Direcção e Chefia;;Chefe de Divisão;;170;439 750,21;;439 750,21
+ANEXO IX;Direcção e Chefia;;Chefe de Secção;;140;362 147,23;;362 147,23
+ANEXO IX;Pessoal Técnico;;Contador Geral;;960;579 055,80;;
+ANEXO IX;Pessoal Técnico;;Contador - Chefe;;900;542 864,82;;
+ANEXO IX;Pessoal Técnico;;Contador Verificador Especialista;;840;506 673,83;;
+ANEXO IX;Pessoal Técnico;;Contador Verificador Principal;;760;458 419,18;;
+ANEXO IX;Pessoal Técnico;;Contador Verificador de 1ª Classe;;680;410 164,53;;
+ANEXO IX;Pessoal Técnico;;Contador Verificador de 2ª Classe;;600;361 909,88;;
+ANEXO X;Direcção e Chefia;;Inspector Geral;;220;569 088,51;113 817,70;682 906,21
+ANEXO X;Direcção e Chefia;;Inspector Director;;220;569 088,51;113 817,70;682 906,21
+ANEXO X;Direcção e Chefia;;Inspector Geral Adjunto;;200;517 353,19;103 470,64;620 823,83
+ANEXO X;Direcção e Chefia;;Inspector Provincial;;200;517 353,19;103 470,64;620 823,83
+ANEXO X;Direcção e Chefia;;Inspector Chefe de 1ª Classe;;190;491 485,53;;491 485,53
+ANEXO X;Direcção e Chefia;;Inspector Chefe de 2ª Classe;;170;439 750,21;;439 750,21
+ANEXO X;Técnico Superior;;Inspector Assessor Principal;;960;579 055,80;;
+ANEXO X;Técnico Superior;;Inspector Primeiro Assessor;;900;542 864,82;;
+ANEXO X;Técnico Superior;;Inspector Assessor;;840;506 673,83;;
+ANEXO X;Técnico Superior;;Inspector Superior Principal;;760;458 419,18;;
+ANEXO X;Técnico Superior;;Inspector Superior de 1ª Classe;;680;410 164,53;;
+ANEXO X;Técnico Superior;;Inspector Superior de 2ª Classe;;600;361 909,88;;
+ANEXO X;Técnico;;Inspector Especialista Principal;;540;325 718,89;;
+ANEXO X;Técnico;;Inspector Especialista de 1ª Classe;;480;289 527,90;;
+ANEXO X;Técnico;;Inspector Especialista de 2ª Classe;;420;253 336,91;;
+ANEXO X;Técnico;;Inspector Técnico de 1ª Classe;;400;241 273,25;;
+ANEXO X;Técnico;;Inspector Técnico de 2ª Classe;;370;223 177,76;;
+ANEXO X;Técnico;;Inspector Técnico de 3ª Classe;;360;217 145,93;;
+ANEXO X;Técnico Médio;;Sub-inspector Principal de 1ª Classe;;350;211 114,10;;
+ANEXO X;Técnico Médio;;Sub-inspector Principal de 2ª Classe;;340;205 082,26;;
+ANEXO X;Técnico Médio;;Sub-inspector Principal de 3ª Classe;;300;180 954,94;;
+ANEXO X;Técnico Médio;;Sub-inspector de 1ª Classe;;280;168 891,28;;
+ANEXO X;Técnico Médio;;Sub-inspector de 2ª Classe;;260;156 827,61;;
+ANEXO X;Técnico Médio;;Sub-inspector de 3ª Classe;;240;144 763,95;;
+ANEXO XI;Direcção e Chefia;;Director;Escola do II.º Ciclo do Ensino Secundário;200;517 353,19;25 867,66;543 220,85
+ANEXO XI;Direcção e Chefia;;Subdirector;Escola do II.º Ciclo do Ensino Secundário;195;504 419,36;25 220,97;529 640,33
+ANEXO XI;Direcção e Chefia;;Coordenador de Curso / Centro;Escola do II.º Ciclo do Ensino Secundário;190;491 485,53;24 574,28;516 059,81
+ANEXO XI;Direcção e Chefia;;Coordenador de Disciplina;Escola do II.º Ciclo do Ensino Secundário;170;439 750,21;21 987,51;461 737,72
+ANEXO XI;Direcção e Chefia;;Director de mais de 1500 alunos;Escola do I.º Ciclo do Ensino Secundário;180;465 617,87;23 280,89;488 898,76
+ANEXO XI;Direcção e Chefia;;Sub-Director de mais de 1500 alunos, Director de 500 a 1.500 alunos;Escola do I.º Ciclo do Ensino Secundário;170;439 750,21;21 987,51;461 737,72
+ANEXO XI;Direcção e Chefia;;Director até 500 alunos;Escola do I.º Ciclo do Ensino Secundário;160;413 882,55;20 694,13;434 576,68
+ANEXO XI;Direcção e Chefia;;Coordenador de Turno, de Disciplina de Círculos de Interesse e de Desporto Escolar;Escola do I.º Ciclo do Ensino Secundário;160;413 882,55;20 694,13;434 576,68
+ANEXO XI;Direcção e Chefia;;Director de mais de 1500 alunos e Director do Centro Infantil;Pré-Escolar e Ensino Primário;150;388 014,89;19 400,74;407 415,64
+ANEXO XI;Direcção e Chefia;;Subdirector e Coordenador Pedagógico de mais de 1500 alunos, Director de 500 a 1.500 alunos;Pré-Escolar e Ensino Primário;145;375 081,06;18 754,05;393 835,11
+ANEXO XI;Direcção e Chefia;;Director até 500 alunos;Pré-Escolar e Ensino Primário;140;362 147,23;18 107,36;380 254,59
+ANEXO XI;Direcção e Chefia;;Coordenador de Classe;Pré-Escolar e Ensino Primário;120;310 411,91;15 520,60;325 932,51
+ANEXO XII;Técnico Superior;Professor do Ensino Primário e Secundário Diplomado;Professor do Ensino Primário e Secundário do 1º Grau;;960;579 055,80;;
+ANEXO XII;Técnico Superior;Professor do Ensino Primário e Secundário Diplomado;Professor do Ensino Primário e Secundário do 2º Grau;;900;542 864,82;;
+ANEXO XII;Técnico Superior;Professor do Ensino Primário e Secundário Diplomado;Professor do Ensino Primário e Secundário do 3.º Grau;;840;506 673,83;;
+ANEXO XII;Técnico Superior;Professor do Ensino Primário e Secundário Diplomado;Professor do Ensino Primário e Secundário do 4º Grau;;760;458 419,18;;
+ANEXO XII;Técnico Superior;Professor do Ensino Primário e Secundário Diplomado;Professor do Ensino Primário e Secundário do 5º Grau;;680;410 164,53;;
+ANEXO XII;Técnico Superior;Professor do Ensino Primário e Secundário Diplomado;Professor do Ensino Primário e Secundário do 6º Grau;;600;361 909,88;;
+ANEXO XII;Técnico;Professor do Ensino Primário e Secundário Diplomado;Professor do Ensino Primário e Secundário do 7º Grau;;540;325 718,89;;
+ANEXO XII;Técnico;Professor do Ensino Primário e Secundário Diplomado;Professor do Ensino Primário e Secundário do 8º Grau;;480;289 527,90;;
+ANEXO XII;Técnico;Professor do Ensino Primário e Secundário Diplomado;Professor do Ensino Primário e Secundário do 9º Grau;;420;253 336,91;;
+ANEXO XII;Técnico Médio;Professor do Ensino Primário e Secundário Diplomado;Professor do Ensino Primário e Secundário do 10º Grau;;350;211 114,10;;
+ANEXO XII;Técnico Médio;Professor do Ensino Primário e Secundário Diplomado;Professor do Ensino Primário e Secundário do 11º Grau;;340;205 082,26;;
+ANEXO XII;Técnico Médio;Professor do Ensino Primário e Secundário Diplomado;Professor do Ensino Primário e Secundário do 12º Grau;;300;180 954,94;;
+ANEXO XII;Técnico Médio;Professor do Ensino Primário e Secundário Diplomado;Professor do Ensino Primário e Secundário do 13º Grau;;280;168 891,28;;
+ANEXO XII;Auxiliares;Professor Auxiliar;Professor Auxiliar do 1º Grau;;240;144 763,95;;
+ANEXO XII;Auxiliares;Professor Auxiliar;Professor Auxiliar do 2º Grau;;220;132 700,29;;
+ANEXO XII;Auxiliares;Professor Auxiliar;Professor Auxiliar do 3º Grau;;200;120 636,63;;
+ANEXO XIII;Técnico Superior;Técnicos Pedagógicos e Especialistas da Educação;Especialista de Administração da Educação do 1º Grau;;960;579 055,80;;
+ANEXO XIII;Técnico Superior;Técnicos Pedagógicos e Especialistas da Educação;Especialista de Administração da Educação do 2º Grau;;900;542 864,82;;
+ANEXO XIII;Técnico Superior;Técnicos Pedagógicos e Especialistas da Educação;Especialista de Administração da Educação do 3º Grau;;840;506 673,83;;
+ANEXO XIII;Técnico Superior;Técnicos Pedagógicos e Especialistas da Educação;Especialista de Administração da Educação do 4º Grau;;760;458 419,18;;
+ANEXO XIII;Técnico Superior;Técnicos Pedagógicos e Especialistas da Educação;Especialista de Administração da Educação do 5º Grau;;680;410 164,53;;
+ANEXO XIII;Técnico Superior;Técnicos Pedagógicos e Especialistas da Educação;Especialista de Administração da Educação do 6º Grau;;600;361 909,88;;
+ANEXO XIII;Técnico;Técnicos Pedagógicos e Especialistas da Educação;Técnico Pedagógico de Nível I do 1º Grau;;540;325 718,89;;
+ANEXO XIII;Técnico;Técnicos Pedagógicos e Especialistas da Educação;Técnico Pedagógico de Nível I do 2º Grau;;480;289 527,90;;
+ANEXO XIII;Técnico;Técnicos Pedagógicos e Especialistas da Educação;Técnico Pedagógico de Nível I do 3º Grau;;420;253 336,91;;
+ANEXO XIII;Técnico Médio;Técnicos Pedagógicos e Especialistas da Educação;Técnico Pedagógico de Nível II do 1º Grau;;350;211 114,10;;
+ANEXO XIII;Técnico Médio;Técnicos Pedagógicos e Especialistas da Educação;Técnico Pedagógico de Nível II do 2º Grau;;340;205 082,26;;
+ANEXO XIII;Técnico Médio;Técnicos Pedagógicos e Especialistas da Educação;Técnico Pedagógico de Nível II do 3º Grau;;300;180 954,94;;
+ANEXO XIII;Técnico Médio;Técnicos Pedagógicos e Especialistas da Educação;Técnico Pedagógico de Nível II do 4º Grau;;280;168 891,28;;
+ANEXO XIV;Técnico Superior;Educador de Infância da Acção Educativa;Educador de Infância de Nível I do 1º Grau;;840;506 673,83;;
+ANEXO XIV;Técnico Superior;Educador de Infância da Acção Educativa;Educador de Infância de Nível I do 2º Grau;;760;458 419,18;;
+ANEXO XIV;Técnico Superior;Educador de Infância da Acção Educativa;Educador de Infância de Nível I do 3º Grau;;680;410 164,53;;
+ANEXO XIV;Técnico;Educador de Infância da Acção Educativa;Educador de Infância de Nível I do 4º Grau;;540;325 718,89;;
+ANEXO XIV;Técnico;Educador de Infância da Acção Educativa;Educador de Infância de Nível I do 5º Grau;;480;289 527,90;;
+ANEXO XIV;Técnico;Educador de Infância da Acção Educativa;Educador de Infância de Nível I do 6º Grau;;420;253 336,91;;
+ANEXO XIV;Técnico Médio;Educador de Infância da Acção Educativa;Educador de Infância de Nível II do 1º Grau;;350;211 114,10;;
+ANEXO XIV;Técnico Médio;Educador de Infância da Acção Educativa;Educador de Infância de Nível II do 2º Grau;;340;205 082,26;;
+ANEXO XIV;Técnico Médio;Educador de Infância da Acção Educativa;Educador de Infância de Nível II do 3º Grau;;300;180 954,94;;
+ANEXO XIV;Técnico Médio;Educador de Infância da Acção Educativa;Educador de Infância de Nível II do 4º Grau;;280;168 891,28;;
+ANEXO XIV;Técnico Médio;Educador de Infância da Acção Educativa;Educador de Infância de Nível II do 5º Grau;;260;156 827,61;;
+ANEXO XIV;Técnico Médio;Educador de Infância da Acção Educativa;Educador de Infância de Nível II do 6º Grau;;240;144 763,95;;
+ANEXO XIV;Auxiliares;Auxiliar da Acção Educativa;Auxiliar da Acção Educativa do 1º Grau;;240;144 763,95;;
+ANEXO XIV;Auxiliares;Auxiliar da Acção Educativa;Auxiliar da Acção Educativa do 2º Grau;;220;132 700,29;;
+ANEXO XIV;Auxiliares;Auxiliar da Acção Educativa;Auxiliar da Acção Educativa do 3º Grau;;200;120 636,63;;
+ANEXO XV;Técnica Superior;Formador;Formador Assessor Principal;;960;579 055,80;;
+ANEXO XV;Técnica Superior;Formador;Formador 1.º Assessor;;900;542 864,82;;
+ANEXO XV;Técnica Superior;Formador;Formador Assessor;;840;506 673,83;;
+ANEXO XV;Técnica Superior;Formador;Formador Técnico Superior Principal;;760;458 419,18;;
+ANEXO XV;Técnica Superior;Formador;Formador Técnico Superior de 1.ª Classe;;680;410 164,53;;
+ANEXO XV;Técnica Superior;Formador;Formador Técnico Superior de 2.ª Classe;;600;361 909,88;;
+ANEXO XV;Técnica;Formador;Formador Técnico Especialista Principal;;540;325 718,89;;
+ANEXO XV;Técnica;Formador;Formador Técnico de 1.ª Classe;;480;289 527,90;;
+ANEXO XV;Técnica;Formador;Formador Técnico de 2.ª Classe;;420;253 336,91;;
+ANEXO XV;Técnica Média;Formador;Formador Técnico Médio Principal;;350;211 114,10;;
+ANEXO XV;Técnica Média;Formador;Formador Técnico Médio de 1.ª Classe;;340;205 082,26;;
+ANEXO XV;Técnica Média;Formador;Formador Técnico Médio de 2.ª Classe;;300;180 954,94;;
+ANEXO XV;Técnica Média;Formador;Formador Técnico Médio de 3ª Classe;;280;168 891,28;;
+ANEXO XV;Técnica Superior;Especialista de Emprego e Formação;Especialista de Emprego e Formação Assessor Principal;;960;579 055,80;;
+ANEXO XV;Técnica Superior;Especialista de Emprego e Formação;Especialista de Emprego e Formação 1º Assessor;;900;542 864,82;;
+ANEXO XV;Técnica Superior;Especialista de Emprego e Formação;Especialista de Emprego e Formação Assessor;;840;506 673,83;;
+ANEXO XV;Técnica Superior;Especialista de Emprego e Formação;Especialista de Emprego e Formação Técnico Superior Principal;;760;458 419,18;;
+ANEXO XV;Técnica Superior;Especialista de Emprego e Formação;Especialista de Emprego e Formação Técnico Superior 1ª Classe;;680;410 164,53;;
+ANEXO XV;Técnica Superior;Especialista de Emprego e Formação;Especialista de Emprego e Formação Técnico Superior 2ª Classe;;600;361 909,88;;
+ANEXO XV;Técnica;Especialista de Emprego e Formação;Técnico Especialista de Emprego e Formação Principal;;540;325 718,89;;
+ANEXO XV;Técnica;Especialista de Emprego e Formação;Técnico Especialista de Emprego e Formação 1ª Classe;;480;289 527,90;;
+ANEXO XV;Técnica;Especialista de Emprego e Formação;Técnico Especialista de Emprego e Formação 2ª Classe;;420;253 336,91;;
+ANEXO XV;Técnica Média;Especialista de Emprego e Formação;Técnico Médio Especialista de Emprego e Formação Principal;;350;211 114,10;;
+ANEXO XV;Técnica Média;Especialista de Emprego e Formação;Técnico Médio Especialista de Emprego e Formação 1ª Classe;;340;205 082,26;;
+ANEXO XV;Técnica Média;Especialista de Emprego e Formação;Técnico Médio Especialista de Emprego e Formação 2ª Classe;;300;180 954,94;;
+ANEXO XV;Técnica Média;Especialista de Emprego e Formação;Técnico Médio Especialista de Emprego e Formação 3ª Classe;;280;168 891,28;;
+ANEXO XV;Técnica Média;Especialista de Emprego e Formação;Técnico Médio Especialista de Emprego e Formação 4ª Classe;;260;156 827,61;;
+ANEXO XVI;Direcção;Hospital de IIIº Nível;Director Administrativo;Central;190;491 485,53;49 148,55;540 634,08
+ANEXO XVI;Direcção;Hospital de IIIº Nível;Director de Enfermagem;Central;190;491 485,53;49 148,55;540 634,08
+ANEXO XVI;Direcção;Hospital de Iº e IIº Níveis;Director Geral;Geral + Municipal;190;491 485,53;49 148,55;540 634,08
+ANEXO XVI;Direcção;Hospital de Iº e IIº Níveis;Director de Enfermagem;Geral + Municipal;150;388 014,89;38 801,49;426 816,38
+ANEXO XVI;Direcção;Hospital de Iº e IIº Níveis;Administrador;Geral + Municipal;150;388 014,89;38 801,49;426 816,38
+ANEXO XVI;Direcção;Centros e Postos de Saúde;Director Geral;Centro de Saúde Nível II;150;388 014,89;38 801,49;426 816,38
+ANEXO XVI;Direcção;Centros e Postos de Saúde;Administrador;Centro de Saúde Nível II;145;375 081,06;37 508,11;412 589,17
+ANEXO XVI;Direcção;Centros e Postos de Saúde;Chefe de Centro de Saúde;Centro de Saúde Nível I;140;362 147,23;36 214,72;398 361,95
+ANEXO XVI;Direcção;Centros e Postos de Saúde;Chefe de Posto;Posto de Saúde;140;362 147,23;36 214,72;398 361,95
+ANEXO XVI;Chefia Administrativa;Chefia Administrativa;Chefe de Departamento;Central + Geral;150;388 014,89;;388 014,89
+ANEXO XVI;Chefia Administrativa;Chefia Administrativa;Chefe de Serviço de Admissão e Estatística;Todos os Níveis;140;362 147,23;;362 147,23
+ANEXO XVI;Chefia Administrativa;Chefia Administrativa;Chefe de Serviços Gerais;Todos os Níveis;140;362 147,23;;362 147,23
+ANEXO XVI;Chefia Administrativa;Chefia Administrativa;Chefe de Secção;Central;120;310 411,91;;310 411,91
+ANEXO XVI;Chefia Administrativa;Chefia Administrativa;Chefe de Secção;Geral + Municipal;110;284 544,25;;284 544,25
+ANEXO XVI;Chefia Administrativa;Chefia Administrativa;Chefe da Casa Mortuária;Todos os Níveis;110;284 544,25;;284 544,25
+ANEXO XVII;Técnico Superior;Carreira Médica;Médico Chefe de Serviço;;1020;615 246,79;;
+ANEXO XVII;Técnico Superior;Carreira Médica;Médico Assistente Graduado - A;;990;597 151,30;;
+ANEXO XVII;Técnico Superior;Carreira Médica;Médico Assistente Graduado - B;;960;579 055,80;;
+ANEXO XVII;Técnico Superior;Carreira Médica;Médico Assistente Graduado - C;;900;542 864,82;;
+ANEXO XVII;Técnico Superior;Carreira Médica;Médico Assistente;;840;506 673,83;;
+ANEXO XVII;Técnico Superior;Carreira Médica;Médico Interno de Especialidade / Médico Geral;;680;410 164,53;;
+ANEXO XVIII;Técnico Superior;Enfermagem;Enfermeiro Especializado de 1.ª Classe;;960;579 055,80;;
+ANEXO XVIII;Técnico Superior;Enfermagem;Enfermeiro Especializado de 2.ª Classe;;900;542 864,82;;
+ANEXO XVIII;Técnico Superior;Enfermagem;Enfermeiro Especializado de 3.ª Classe;;840;506 673,83;;
+ANEXO XVIII;Técnico Superior;Enfermagem;Enfermeiro de 1.ª Classe;;760;458 419,18;;
+ANEXO XVIII;Técnico Superior;Enfermagem;Enfermeiro de 2.ª Classe;;680;410 164,53;;
+ANEXO XVIII;Técnico Superior;Enfermagem;Enfermeiro de 3.ª Classe;;600;361 909,88;;
+ANEXO XVIII;Técnico;Enfermagem;Bacharel em Enfermagem de 1.ª Classe;;540;325 718,89;;
+ANEXO XVIII;Técnico;Enfermagem;Bacharel em Enfermagem de 2.ª Classe;;480;289 527,90;;
+ANEXO XVIII;Técnico;Enfermagem;Bacharel em Enfermagem de 3.ª Classe;;420;253 336,91;;
+ANEXO XVIII;Técnico Médio;Enfermagem;Técnico Médio Enf. Especializado de 1.ª Classe;;350;211 114,10;;
+ANEXO XVIII;Técnico Médio;Enfermagem;Técnico Médio Enf. Especializado de 2.ª Classe;;340;205 082,26;;
+ANEXO XVIII;Técnico Médio;Enfermagem;Técnico Médio Enf. Especializado de 3.ª Classe;;300;180 954,94;;
+ANEXO XVIII;Técnico Médio;Enfermagem;Técnico Médio de Enfermagem de 1.ª Classe;;280;168 891,28;;
+ANEXO XVIII;Técnico Médio;Enfermagem;Técnico Médio de Enfermagem de 2.ª Classe;;260;156 827,61;;
+ANEXO XVIII;Técnico Médio;Enfermagem;Técnico Médio de Enfermagem de 3.ª Classe;;240;144 763,95;;
+ANEXO XVIII;Auxiliar;Enfermagem;Auxiliar de Enfermagem de 1.ª Classe;;240;144 763,95;;
+ANEXO XVIII;Auxiliar;Enfermagem;Auxiliar de Enfermagem de 2.ª Classe;;220;132 700,29;;
+ANEXO XVIII;Auxiliar;Enfermagem;Auxiliar de Enfermagem de 3.ª Classe;;200;120 636,63;;
+ANEXO XIX;Técnica Superior;Diagnóstico e Terapêutica;Técnico de Diagnóstico e Terapêutica Assessor Principal;;960;579 055,80;;
+ANEXO XIX;Técnica Superior;Diagnóstico e Terapêutica;Técnico Espec. Diagnóstico e Terapêutica de 1.ª Classe;;900;542 864,82;;
+ANEXO XIX;Técnica Superior;Diagnóstico e Terapêutica;Técnico Espec. Diagnóstico e Terapêutica de 2.ª Classe;;840;506 673,83;;
+ANEXO XIX;Técnica Superior;Diagnóstico e Terapêutica;Técnico Superior de Diagnóstico e Terapêutica Principal;;760;458 419,18;;
+ANEXO XIX;Técnica Superior;Diagnóstico e Terapêutica;Técnico Superior de Diagnóstico e Terapêutica de 1.ª Classe;;680;410 164,53;;
+ANEXO XIX;Técnica Superior;Diagnóstico e Terapêutica;Técnico Superior de Diagnóstico e Terapêutica de 2.ª Classe;;600;361 909,88;;
+ANEXO XIX;Técnica;Diagnóstico e Terapêutica;Bacharel de Diagnóstico e Terapêutica de 1.ª Classe;;540;325 718,89;;
+ANEXO XIX;Técnica;Diagnóstico e Terapêutica;Bacharel de Diagnóstico e Terapêutica de 2.ª Classe;;480;289 527,90;;
+ANEXO XIX;Técnica;Diagnóstico e Terapêutica;Bacharel de Diagnóstico e Terapêutica de 3.ª Classe;;420;253 336,91;;
+ANEXO XIX;Técnica Média;Diagnóstico e Terapêutica;Técnico Médio Espec. Diagnóstico e Terapêutica de 1.ª Classe;;350;211 114,10;;
+ANEXO XIX;Técnica Média;Diagnóstico e Terapêutica;Técnico Médio Espec. Diagnóstico e Terapêutica de 2.ª Classe;;340;205 082,26;;
+ANEXO XIX;Técnica Média;Diagnóstico e Terapêutica;Técnico Médio Espec. Diagnóstico e Terapêutica de 3.ª Classe;;300;180 954,94;;
+ANEXO XIX;Técnica Média;Diagnóstico e Terapêutica;Técnico Médio de Diagnóstico e Terapêutica de 1.ª Classe;;280;168 891,28;;
+ANEXO XIX;Técnica Média;Diagnóstico e Terapêutica;Técnico Médio de Diagnóstico e Terapêutica de 2.ª Classe;;260;156 827,61;;
+ANEXO XIX;Auxiliar;Diagnóstico e Terapêutica;Auxiliar de Diagnóstico e Terapêutica de 1.ª Classe;;240;144 763,95;;
+ANEXO XIX;Auxiliar;Diagnóstico e Terapêutica;Auxiliar de Diagnóstico e Terapêutica de 2.ª Classe;;220;132 700,29;;
+ANEXO XIX;Auxiliar;Diagnóstico e Terapêutica;Auxiliar de Diagnóstico e Terapêutica de 3.ª Classe;;200;120 636,63;;
+ANEXO XX;Acção Médica;Pessoal de Apoio Hospitalar;Secretário Clínico de 1ª Classe;;580;141 951,04;;
+ANEXO XX;Acção Médica;Pessoal de Apoio Hospitalar;Secretário Clínico de 2ª Classe;;575;140 727,33;;
+ANEXO XX;Acção Médica;Pessoal de Apoio Hospitalar;Secretário Clínico de 3ª Classe;;540;132 161,32;;
+ANEXO XX;Acção Médica;Pessoal de Apoio Hospitalar;Vigilante de 1ª Classe;;520;127 266,45;;
+ANEXO XX;Acção Médica;Pessoal de Apoio Hospitalar;Vigilante de 2ª Classe;;500;122 371,59;;
+ANEXO XX;Acção Médica;Pessoal de Apoio Hospitalar;Vigilante de 3ª Classe;;480;117 476,73;;
+ANEXO XX;Acção Médica;Pessoal de Apoio Hospitalar;Maqueiro de 1ª Classe;;500;122 371,59;;
+ANEXO XX;Acção Médica;Pessoal de Apoio Hospitalar;Maqueiro de 2ª Classe;;480;117 476,73;;
+ANEXO XX;Acção Médica;Pessoal de Apoio Hospitalar;Maqueiro de 3ª Classe;;460;112 581,86;;
+ANEXO XX;Alimentação e Nutrição;Pessoal de Apoio Hospitalar;Cozinheiro Principal;;580;141 951,04;;
+ANEXO XX;Alimentação e Nutrição;Pessoal de Apoio Hospitalar;Cozinheiro de 1ª Classe;;575;140 727,33;;
+ANEXO XX;Alimentação e Nutrição;Pessoal de Apoio Hospitalar;Cozinheiro de 2ª Classe;;540;132 161,32;;
+ANEXO XX;Alimentação e Nutrição;Pessoal de Apoio Hospitalar;Cozinheiro de 3ª Classe;;520;127 266,45;;
+ANEXO XX;Alimentação e Nutrição;Pessoal de Apoio Hospitalar;Copeiro de 1ª Classe;;500;122 371,59;;
+ANEXO XX;Alimentação e Nutrição;Pessoal de Apoio Hospitalar;Copeiro de 2ª Classe;;480;117 476,73;;
+ANEXO XX;Alimentação e Nutrição;Pessoal de Apoio Hospitalar;Copeiro de 3ª Classe;;460;112 581,86;;
+ANEXO XX;Lavandaria;Pessoal de Apoio Hospitalar;Operador Lavandaria de 1ª Classe;;500;122 371,59;;
+ANEXO XX;Lavandaria;Pessoal de Apoio Hospitalar;Operador Lavandaria de 2ª Classe;;480;117 476,73;;
+ANEXO XX;Lavandaria;Pessoal de Apoio Hospitalar;Operador Lavandaria de 3ª Classe;;460;112 581,86;;
+ANEXO XX;Lavandaria;Pessoal de Apoio Hospitalar;Costureiro de 1ª Classe;;480;117 476,73;;
+ANEXO XX;Lavandaria;Pessoal de Apoio Hospitalar;Costureiro de 2ª Classe;;460;112 581,86;;
+ANEXO XX;Lavandaria;Pessoal de Apoio Hospitalar;Costureiro de 3ª Classe;;440;107 687,00;;
+ANEXO XX;Aprovisionamento;Pessoal de Apoio Hospitalar;Condutor de Ambulância Principal;;580;141 951,04;;
+ANEXO XX;Aprovisionamento;Pessoal de Apoio Hospitalar;Condutor de Ambulância de 1ª Classe;;575;140 727,33;;
+ANEXO XX;Aprovisionamento;Pessoal de Apoio Hospitalar;Condutor de Ambulância de 2ª Classe;;540;132 161,32;;
+ANEXO XX;Aprovisionamento;Pessoal de Apoio Hospitalar;Condutor de Ambulância de 3ª Classe;;520;127 266,45;;
+ANEXO XX;Aprovisionamento;Pessoal de Apoio Hospitalar;Fiel de Armazém de 1ª Classe;;580;141 951,04;;
+ANEXO XX;Aprovisionamento;Pessoal de Apoio Hospitalar;Fiel de Armazém de 2ª Classe;;575;140 727,33;;
+ANEXO XX;Aprovisionamento;Pessoal de Apoio Hospitalar;Fiel de Armazém de 3ª Classe;;540;132 161,32;;
+ANEXO XXI;Pessoal Técnico;Técnica Superior;Assessor Principal de Estatística;;960;579 055,80;;
+ANEXO XXI;Pessoal Técnico;Técnica Superior;Primeiro Assessor de Estatística;;900;542 864,82;;
+ANEXO XXI;Pessoal Técnico;Técnica Superior;Assessor de Estatística;;840;506 673,83;;
+ANEXO XXI;Pessoal Técnico;Técnica Superior;Técnico Superior Principal de Estatística;;760;458 419,18;;
+ANEXO XXI;Pessoal Técnico;Técnica Superior;Técnico Superior de Estatística de 1ª Classe;;680;410 164,53;;
+ANEXO XXI;Pessoal Técnico;Técnica Superior;Técnico Superior de Estatística de 2ª Classe;;600;361 909,88;;
+ANEXO XXI;Pessoal Técnico;Técnica;Especialista de Estatística Principal;;540;325 718,89;;
+ANEXO XXI;Pessoal Técnico;Técnica;Especialista de Estatística de 1ª Classe;;480;289 527,90;;
+ANEXO XXI;Pessoal Técnico;Técnica;Especialista de Estatística de 2ª Classe;;420;253 336,91;;
+ANEXO XXI;Pessoal Técnico;Técnica;Técnico de Estatística de 1ª Classe;;400;241 273,25;;
+ANEXO XXI;Pessoal Técnico;Técnica;Técnico de Estatística de 2ª Classe;;370;223 177,76;;
+ANEXO XXI;Pessoal Técnico;Técnica;Técnico de Estatística de 3ª Classe;;360;217 145,93;;
+ANEXO XXI;Pessoal Técnico;Técnica Média;Técnico Médio Principal de Estatística de 1ª Classe;;350;211 114,10;;
+ANEXO XXI;Pessoal Técnico;Técnica Média;Técnico Médio Principal de Estatística de 2ª Classe;;340;205 082,26;;
+ANEXO XXI;Pessoal Técnico;Técnica Média;Técnico Médio Principal de Estatística de 3ª Classe;;300;180 954,94;;
+ANEXO XXI;Pessoal Técnico;Técnica Média;Técnico Médio de Estatística de 1ª Classe;;280;168 891,28;;
+ANEXO XXI;Pessoal Técnico;Técnica Média;Técnico Médio de Estatística de 2ª Classe;;260;156 827,61;;
+ANEXO XXI;Pessoal Técnico;Técnica Média;Técnico Médio de Estatística de 3ª Classe;;240;144 763,95;;
+ANEXO XXI;Pessoal não Técnico;Auxiliar de Estatística;Auxiliar Técnico Principal de Estatística;;580;141 951,04;;
+ANEXO XXI;Pessoal não Técnico;Auxiliar de Estatística;Auxiliar Técnico de Estatística de 1ª Classe;;575;140 727,33;;
+ANEXO XXI;Pessoal não Técnico;Auxiliar de Estatística;Auxiliar Técnico de Estatística de 2ª Classe;;540;132 161,32;;
+ANEXO XXI;Pessoal não Técnico;Auxiliar de Estatística;Auxiliar Técnico de Estatística de 3ª Classe;;520;127 266,45;;
+ANEXO XXII;Técnica Superior;Registos;Conservador de 1ª Classe;;960;579 055,80;;
+ANEXO XXII;Técnica Superior;Notariado;Notário de 1ª Classe;;960;579 055,80;;
+ANEXO XXII;Técnica Superior;Tribunal;Secretário Judicial;;960;579 055,80;;
+ANEXO XXII;Técnica Superior;DNAICC;Assessor de Identificação Principal;;960;579 055,80;;
+ANEXO XXII;Técnica Superior;Registos;Conservador de 2ª Classe;;900;542 864,82;;
+ANEXO XXII;Técnica Superior;Notariado;Notário de 2ª Classe;;900;542 864,82;;
+ANEXO XXII;Técnica Superior;Tribunal;Escrivão de Direito de 1ª Classe;;900;542 864,82;;
+ANEXO XXII;Técnica Superior;DNAICC;Assessor de Identificação de 1ª Classe;;900;542 864,82;;
+ANEXO XXII;Técnica Superior;Registos;Conservador de 3ª Classe;;840;506 673,83;;
+ANEXO XXII;Técnica Superior;Notariado;Notário de 3ª Classe;;840;506 673,83;;
+ANEXO XXII;Técnica Superior;Tribunal;Escrivão de Direito de 2ª Classe;;840;506 673,83;;
+ANEXO XXII;Técnica Superior;DNAICC;Assessor de Identificação de 2ª Classe;;840;506 673,83;;
+ANEXO XXII;Técnica Superior;Registos;Conservador Adjunto;;760;458 419,18;;
+ANEXO XXII;Técnica Superior;Notariado;Notário Adjunto;;760;458 419,18;;
+ANEXO XXII;Técnica Superior;Tribunal;Escrivão de Direito de 3ª Classe;;760;458 419,18;;
+ANEXO XXII;Técnica Superior;DNAICC;Técnico Sup. Identificação Principal;;760;458 419,18;;
+ANEXO XXII;Técnica Especialista;Registos;Ajudante Principal;;540;325 718,89;;
+ANEXO XXII;Técnica Especialista;Notariado;Ajudante Principal;;540;325 718,89;;
+ANEXO XXII;Técnica Especialista;Tribunal;Ajudante de Escrivão de 1.ª Classe;;540;325 718,89;;
+ANEXO XXII;Técnica Especialista;DNAICC;Emissor Principal;;540;325 718,89;;
+ANEXO XXII;Técnica Especialista;Registos;1º Ajudante de Conservador;;480;289 527,90;;
+ANEXO XXII;Técnica Especialista;Notariado;1º Ajudante do Notariado;;480;289 527,90;;
+ANEXO XXII;Técnica Especialista;Tribunal;Ajudante de Escrivão de 2ª Classe;;480;289 527,90;;
+ANEXO XXII;Técnica Especialista;DNAICC;Emissor de 1ª Classe;;480;289 527,90;;
+ANEXO XXII;Técnica Especialista;Registos;2º Ajudante de Conservador;;420;253 336,90;;
+ANEXO XXII;Técnica Especialista;Notariado;2º Ajudante do Notariado;;420;253 336,90;;
+ANEXO XXII;Técnica Especialista;Tribunal;Ajudante de Escrivão de 3ª Classe;;420;253 336,90;;
+ANEXO XXII;Técnica Especialista;DNAICC;Emissor de 2ª Classe;;420;253 336,90;;
+ANEXO XXII;Técnica Média;Registos;Oficial Aux. Princ. de Conservador;;350;211 114,10;;
+ANEXO XXII;Técnica Média;Notariado;Oficial Aux. Princ. do Notariado;;350;211 114,10;;
+ANEXO XXII;Técnica Média;Tribunal;Oficial de Diligência de 1ª Classe;;350;211 114,10;;
+ANEXO XXII;Técnica Média;DNAICC;Dactiloscopista Principal;;350;211 114,10;;
+ANEXO XXII;Técnica Média;Registos;Oficial Aux. de Conserv. 1ª Classe;;340;205 082,26;;
+ANEXO XXII;Técnica Média;Notariado;Oficial Aux. do Notariado de 1ª Classe;;340;205 082,26;;
+ANEXO XXII;Técnica Média;Tribunal;Oficial de Diligência de 2ª Classe;;340;205 082,26;;
+ANEXO XXII;Técnica Média;DNAICC;Dactiloscopista de 1ª Classe;;340;205 082,26;;
+ANEXO XXII;Técnica Média;Registos;Oficial Aux. de Conserv. 2ª Classe;;300;180 954,94;;
+ANEXO XXII;Técnica Média;Notariado;Oficial Aux. do Notariado de 2ª Classe;;300;180 954,94;;
+ANEXO XXII;Técnica Média;Tribunal;Oficial de Diligência de 3ª Classe;;300;180 954,94;;
+ANEXO XXII;Técnica Média;DNAICC;Dactiloscopista de 2ª Classe;;300;180 954,94;;
+ANEXO XXIII;Técnica Superior;Técnicos de Justiça da PGR;Técnico Principal Chefe;;960;579 055,80;;
+ANEXO XXIII;Técnica Superior;Técnicos de Justiça da PGR;Técnico Principal de 1.ª Classe;;900;542 864,82;;
+ANEXO XXIII;Técnica Superior;Técnicos de Justiça da PGR;Técnico Principal de 2.ª Classe;;840;506 673,83;;
+ANEXO XXIII;Técnica Superior;Técnicos de Justiça da PGR;Técnico Principal de 3.ª Classe;;760;458 419,18;;
+ANEXO XXIII;Técnica Especialista;Técnicos de Justiça da PGR;Ajudante Técnico de 1.ª Classe;;540;325 718,89;;
+ANEXO XXIII;Técnica Especialista;Técnicos de Justiça da PGR;Ajudante Técnico de 2.ª Classe;;480;289 527,90;;
+ANEXO XXIII;Técnica Especialista;Técnicos de Justiça da PGR;Ajudante Técnico de 3.ª Classe;;420;253 336,91;;
+ANEXO XXIII;Técnica Média;Técnicos de Justiça da PGR;Auxiliar Técnico de 1.ª Classe;;350;211 114,10;;
+ANEXO XXIII;Técnica Média;Técnicos de Justiça da PGR;Auxiliar Técnico de 2.ª Classe;;340;205 082,26;;
+ANEXO XXIII;Técnica Média;Técnicos de Justiça da PGR;Auxiliar Técnico de 3.ª Classe;;300;180 954,94;;
+ANEXO XXIV;Pessoal Técnico;Trabalhador Social;Assistente Social Assessor Principal;;960;579 055,80;;
+ANEXO XXIV;Pessoal Técnico;Trabalhador Social;Assistente Social Primeiro Assessor;;900;542 864,82;;
+ANEXO XXIV;Pessoal Técnico;Trabalhador Social;Assistente Social Assessor;;840;506 673,83;;
+ANEXO XXIV;Pessoal Técnico;Trabalhador Social;Assistente Social Principal;;760;458 419,18;;
+ANEXO XXIV;Pessoal Técnico;Trabalhador Social;Assistente Social de 1ª Classe;;680;410 164,53;;
+ANEXO XXIV;Pessoal Técnico;Trabalhador Social;Assistente Social de 2ª Classe;;600;361 909,88;;
+ANEXO XXIV;Pessoal Técnico;Trabalhador Social;Educador Social Principal de 1ª Classe;;350;211 114,10;;
+ANEXO XXIV;Pessoal Técnico;Trabalhador Social;Educador Social Principal de 2ª Classe;;340;205 082,26;;
+ANEXO XXIV;Pessoal Técnico;Trabalhador Social;Educador Social Principal de 3ª Classe;;300;180 954,94;;
+ANEXO XXIV;Pessoal Técnico;Trabalhador Social;Educador Social de 1ª Classe;;280;168 891,28;;
+ANEXO XXIV;Pessoal Técnico;Trabalhador Social;Educador Social de 2ª Classe;;260;156 827,61;;
+ANEXO XXIV;Pessoal Técnico;Trabalhador Social;Educador Social de 3ª Classe;;240;144 763,95;;
+ANEXO XXIV;Pessoal não Técnico;Trabalhador Social;Auxiliar de Acção Social Principal;;575;140 727,33;;
+ANEXO XXIV;Pessoal não Técnico;Trabalhador Social;Auxiliar de Acção Social de 1ª Classe;;540;132 161,32;;
+ANEXO XXIV;Pessoal não Técnico;Trabalhador Social;Auxiliar de Acção Social de 2ª Classe;;520;127 266,45;;
+ANEXO XXIV;Pessoal não Técnico;Trabalhador Social;Auxiliar de Acção Social de 3ª Classe;;500;122 371,59;;
+ANEXO XXIV;Pessoal não Técnico;Trabalhador Social;Vigilante de Terceira Idade Principal;;540;132 161,32;;
+ANEXO XXIV;Pessoal não Técnico;Trabalhador Social;Vigilante de Terceira Idade de 1ª Classe;;520;127 266,45;;
+ANEXO XXIV;Pessoal não Técnico;Trabalhador Social;Vigilante de Terceira Idade de 2ª Classe;;500;122 371,59;;
+ANEXO XXIV;Pessoal não Técnico;Trabalhador Social;Vigilante de Terceira Idade de 3ª Classe;;480;117 476,73;;
+ANEXO XXIV;Pessoal não Técnico;Trabalhador Social;Auxiliar de Cuidados de Primeira Infância Principal;;540;132 161,32;;
+ANEXO XXIV;Pessoal não Técnico;Trabalhador Social;Auxiliar de Cuidados de Primeira Infância de 1ª Classe;;520;127 266,45;;
+ANEXO XXIV;Pessoal não Técnico;Trabalhador Social;Auxiliar de Cuidados de Primeira Infância de 2ª Classe;;500;122 371,59;;
+ANEXO XXIV;Pessoal não Técnico;Trabalhador Social;Auxiliar de Cuidados de Primeira Infância de 3ª Classe;;480;117 476,73;;
+ANEXO XXV;Pessoal Técnico;Técnica Superior;Assessor de Telecomunicações Principal;;960;579 055,80;;
+ANEXO XXV;Pessoal Técnico;Técnica Superior;Assessor de Telecomunicações de 1ª Classe;;900;542 864,82;;
+ANEXO XXV;Pessoal Técnico;Técnica Superior;Assessor de Telecomunicações de 2ª Classe;;840;506 673,83;;
+ANEXO XXV;Pessoal Técnico;Técnica Superior;Técnico Superior de Telecomunicações Principal;;760;458 419,18;;
+ANEXO XXV;Pessoal Técnico;Técnica Superior;Técnico Superior de Telecomunicações de 1ª Classe;;680;410 164,53;;
+ANEXO XXV;Pessoal Técnico;Técnica Superior;Técnico Superior de Telecomunicações de 2.ª Classe;;600;361 909,88;;
+ANEXO XXV;Pessoal Técnico;Técnica;Especialista de Telecomunicações Principal;;540;325 718,89;;
+ANEXO XXV;Pessoal Técnico;Técnica;Especialista de Telecomunicações de 1ª Classe;;480;289 527,90;;
+ANEXO XXV;Pessoal Técnico;Técnica;Especialista de Telecomunicações de 2ª Classe;;420;253 336,91;;
+ANEXO XXV;Pessoal Técnico;Técnica;Assistente de Telecomunicações Principal;;400;241 273,25;;
+ANEXO XXV;Pessoal Técnico;Técnica;Assistente de Telecomunicações de 1ª Classe;;370;223 177,76;;
+ANEXO XXV;Pessoal Técnico;Técnica;Assistente de Telecomunicações de 2ª Classe;;360;217 145,93;;
+ANEXO XXV;Pessoal Técnico;Técnica Média;Técnico Médio Principal de Telecom. 1ª Classe;;350;211 114,10;;
+ANEXO XXV;Pessoal Técnico;Técnica Média;Técnico Médio Principal de Telecom. 2ª Classe;;340;205 082,26;;
+ANEXO XXV;Pessoal Técnico;Técnica Média;Técnico Médio Principal de Telecom. 3ª Classe;;300;180 954,94;;
+ANEXO XXV;Pessoal Técnico;Técnica Média;Técnico Médio de Telecomunicações de 1ª Classe;;280;168 891,28;;
+ANEXO XXV;Pessoal Técnico;Técnica Média;Técnico Médio de Telecomunicações de 2ª Classe;;260;156 827,61;;
+ANEXO XXV;Pessoal Técnico;Técnica Média;Técnico Médio de Telecomunicações de 3ª Classe;;240;144 763,95;;
+ANEXO XXV;Pessoal não Técnico;Manutenção de Telecomunicações;Radiomontador Principal;;580;141 951,04;;
+ANEXO XXV;Pessoal não Técnico;Manutenção de Telecomunicações;Radiomontador de 1ª Classe;;575;140 727,33;;
+ANEXO XXV;Pessoal não Técnico;Manutenção de Telecomunicações;Radiomontador de 2ª Classe;;540;132 161,32;;
+ANEXO XXV;Pessoal não Técnico;Manutenção de Telecomunicações;Instalador de 1ª Classe;;520;127 266,45;;
+ANEXO XXV;Pessoal não Técnico;Manutenção de Telecomunicações;Instalador de 2ª Classe;;500;122 371,59;;
+ANEXO XXV;Pessoal não Técnico;Manutenção de Telecomunicações;Instalador de 3ª Classe;;480;117 476,73;;
+ANEXO XXV;Pessoal não Técnico;Exploração de Telecomunicações;Operador de Telecomunicações Principal;;580;141 951,04;;
+ANEXO XXV;Pessoal não Técnico;Exploração de Telecomunicações;Operador de Telecomunicações de 1ª Classe;;575;140 727,33;;
+ANEXO XXV;Pessoal não Técnico;Exploração de Telecomunicações;Operador de Telecomunicações de 2ª Classe;;540;132 161,32;;
+ANEXO XXV;Pessoal não Técnico;Exploração de Telecomunicações;Operador de Radiocomunicações de 1ª Classe;;520;127 266,45;;
+ANEXO XXV;Pessoal não Técnico;Exploração de Telecomunicações;Operador de Radiocomunicações de 2ª Classe;;500;122 371,59;;
+ANEXO XXV;Pessoal não Técnico;Exploração de Telecomunicações;Operador de Radiocomunicações de 3ª Classe;;480;117 476,73;;
+ANEXO XXV;Pessoal não Técnico;Auxiliar de Telecomunicações;Boletineiro de 1ª Classe;;460;112 581,86;;
+ANEXO XXV;Pessoal não Técnico;Auxiliar de Telecomunicações;Boletineiro de 2ª Classe;;440;107 687,00;;
+ANEXO XXV;Pessoal não Técnico;Auxiliar de Telecomunicações;Boletineiro de 3ª Classe;;420;102 792,14;;
+ANEXO XXVI;Técnica Superior;Aviação Civil;Auditor/Inspector de Supervisão da Aviação Civil Sénior;;960;579 055,80;;
+ANEXO XXVI;Técnica Superior;Aviação Civil;Auditor/Inspector de Supervisão da Aviação Civil Supervisor;;900;542 864,82;;
+ANEXO XXVI;Técnica Superior;Aviação Civil;Auditor/Inspector de Supervisão da Aviação Civil de 1ª Classe;;840;506 673,83;;
+ANEXO XXVI;Técnica Superior;Aviação Civil;Auditor/Inspector de Supervisão da Aviação Civil de 2ª Classe;;760;458 419,18;;
+ANEXO XXVI;Técnica Superior;Aviação Civil;Auditor/Inspector de Supervisão da Aviação Civil de 3ª Classe;;680;410 164,53;;
+ANEXO XXVI;Técnica Superior;Aviação Civil;Auditor/Inspector de Supervisão da Aviação Civil Assistente;;600;361 909,88;;
+ANEXO XXVI;Técnica;Aviação Civil;Especialista Principal da Aviação Civil;;480;289 527,90;;
+ANEXO XXVI;Técnica;Aviação Civil;Especialista da Aviação Civil de 1ª Classe;;420;253 336,91;;
+ANEXO XXVI;Técnica;Aviação Civil;Especialista da Aviação Civil de 2ª Classe;;400;241 273,25;;
+ANEXO XXVI;Técnica;Aviação Civil;Especialista da Aviação Civil de 3ª Classe;;370;223 177,76;;
+ANEXO XXVI;Técnica Média;Aviação Civil;Técnico da Aviação Civil Principal;;340;205 082,26;;
+ANEXO XXVI;Técnica Média;Aviação Civil;Técnico da Aviação Civil de 1ª Classe;;300;180 954,94;;
+ANEXO XXVI;Técnica Média;Aviação Civil;Técnico da Aviação Civil de 2ª Classe;;280;168 891,28;;
+ANEXO XXVI;Técnica Média;Aviação Civil;Técnico da Aviação Civil de 3ª Classe;;260;156 827,61;;
+ANEXO XXVII;Chefia;Chefia de Desminagem;Chefe de Brigada;;190;491 485,53;;
+ANEXO XXVII;Chefia;Chefia de Desminagem;Chefe de Segurança da Brigada;;170;439 750,21;;
+ANEXO XXVII;Chefia;Chefia de Desminagem;Chefe de Pelotão;;170;439 750,21;;
+ANEXO XXVII;Chefia;Chefia de Desminagem;Chefe da Base de Equipamentos Especiais;;170;439 750,21;;
+ANEXO XXVII;Chefia;Chefia de Desminagem;Chefe de Esquadra;;140;362 147,23;;
+ANEXO XXVII;Chefia;Chefia de Desminagem;Chefe Adjunto da Base de Equipamentos Especiais;;140;362 147,23;;
+ANEXO XXVII;Chefia;Chefia de Desminagem;Chefe de Serviço da Base de Equipamentos Especiais;;140;362 147,23;;
+ANEXO XXVII;Chefia;Chefia de Desminagem;Chefe de Reparação e Manutenção de Equip. Especiais;;140;362 147,23;;
+ANEXO XXVII;Chefia;Chefia de Desminagem;Chefe de Gestão de Stock de Equip. Especiais;;140;362 147,23;;
+ANEXO XXVII;Chefia;Chefia de Desminagem;Chefe da Oficina de Reparação de Meios Equip. Especiais;;140;362 147,23;;
+ANEXO XXVII;Técnico Superior;Desminagem;Assessor Principal de Desminagem;;960;579 055,80;;
+ANEXO XXVII;Técnico Superior;Desminagem;Primeiro Assessor de Desminagem;;900;542 864,82;;
+ANEXO XXVII;Técnico Superior;Desminagem;Assessor de Desminagem;;840;506 673,83;;
+ANEXO XXVII;Técnico Superior;Desminagem;Técnico Superior Principal de Desminagem;;760;458 419,18;;
+ANEXO XXVII;Técnico Superior;Desminagem;Técnico Superior de 1ª Classe de Desminagem;;680;410 164,53;;
+ANEXO XXVII;Técnico Superior;Desminagem;Técnico Superior de 2ª Classe de Desminagem;;600;361 909,88;;
+ANEXO XXVII;Técnico;Desminagem;Especialista Principal de Desminagem;;540;325 718,89;;
+ANEXO XXVII;Técnico;Desminagem;Especialista de Desminagem de 1ª Classe;;480;289 527,90;;
+ANEXO XXVII;Técnico;Desminagem;Especialista de Desminagem de 2ª Classe;;420;253 336,91;;
+ANEXO XXVII;Técnico;Desminagem;Técnico de Desminagem de 1ª Classe;;400;241 273,25;;
+ANEXO XXVII;Técnico;Desminagem;Técnico de Desminagem de 2ª Classe;;370;223 177,76;;
+ANEXO XXVII;Técnico;Desminagem;Técnico de Desminagem de 3ª Classe;;360;217 145,93;;
+ANEXO XXVII;Técnico Médio;Desminagem;Técnico Médio Principal de Desminagem de 1ª Classe;;350;211 114,10;;
+ANEXO XXVII;Técnico Médio;Desminagem;Técnico Médio Principal de Desminagem de 2ª Classe;;340;205 082,26;;
+ANEXO XXVII;Técnico Médio;Desminagem;Técnico Médio Principal de Desminagem de 3ª Classe;;300;180 954,94;;
+ANEXO XXVII;Técnico Médio;Desminagem;Técnico Médio de Desminagem de 1ª Classe;;280;168 891,28;;
+ANEXO XXVII;Técnico Médio;Desminagem;Técnico Médio de Desminagem de 2ª Classe;;260;156 827,61;;
+ANEXO XXVII;Técnico Médio;Desminagem;Técnico Médio de Desminagem de 3ª Classe;;240;144 763,95;;
+ANEXO XXVII;Técnico;Equipamentos Mecânicos;Especialista de Equip. Mecânicos Principal;;540;325 718,89;;
+ANEXO XXVII;Técnico;Equipamentos Mecânicos;Especialista de Equip. Mecânicos de 1ª Classe;;480;289 527,90;;
+ANEXO XXVII;Técnico;Equipamentos Mecânicos;Especialista de Equip. Mecânicos de 2ª Classe;;420;253 336,91;;
+ANEXO XXVII;Técnico;Equipamentos Mecânicos;Técnico de Equipamentos Mecânicos de 1ª Classe;;400;241 273,25;;
+ANEXO XXVII;Técnico;Equipamentos Mecânicos;Técnico de Equipamentos Mecânicos de 2ª Classe;;370;223 177,76;;
+ANEXO XXVII;Técnico;Equipamentos Mecânicos;Técnico de Equipamentos Mecânicos de 3ª Classe;;360;217 145,93;;
+ANEXO XXVII;Técnico Médio;Equipamentos Mecânicos;Técnico Médio de Equip. Mecânicos Principal de 1ª Classe;;350;211 114,10;;
+ANEXO XXVII;Técnico Médio;Equipamentos Mecânicos;Técnico Médio de Equip. Mecânicos Principal de 2ª Classe;;340;205 082,26;;
+ANEXO XXVII;Técnico Médio;Equipamentos Mecânicos;Técnico Médio de Equip. Mecânicos Principal de 3ª Classe;;300;180 954,94;;
+ANEXO XXVII;Técnico Médio;Equipamentos Mecânicos;Técnico Médio de Equipamentos Mecânicos de 1ª Classe;;280;168 891,28;;
+ANEXO XXVII;Técnico Médio;Equipamentos Mecânicos;Técnico Médio de Equipamentos Mecânicos de 2ª Classe;;260;156 827,61;;
+ANEXO XXVII;Técnico Médio;Equipamentos Mecânicos;Técnico Médio de Equipamentos Mecânicos de 3ª Classe;;240;144 763,95;;
+ANEXO XXVII;Apoio Operativo;Apoio Operativo de Desminagem;Mecânico de Equipamentos Principal;;540;132 161,32;;
+ANEXO XXVII;Apoio Operativo;Apoio Operativo de Desminagem;Mecânico de Equipamentos de 1ª Classe;;520;127 266,45;;
+ANEXO XXVII;Apoio Operativo;Apoio Operativo de Desminagem;Mecânico de Equipamentos de 2ª Classe;;500;122 371,59;;
+ANEXO XXVII;Apoio Operativo;Apoio Operativo de Desminagem;Auxiliar Mecânico de Desminagem Principal;;540;132 161,32;;
+ANEXO XXVII;Apoio Operativo;Apoio Operativo de Desminagem;Auxiliar Mecânico de Desminagem de 1ª Classe;;520;127 266,45;;
+ANEXO XXVII;Apoio Operativo;Apoio Operativo de Desminagem;Auxiliar Mecânico de Desminagem de 2ª Classe;;500;122 371,59;;
+ANEXO XXVII;Apoio Operativo;Apoio Operativo de Desminagem;Auxiliar de Campo de Desminagem Principal;;540;132 161,32;;
+ANEXO XXVII;Apoio Operativo;Apoio Operativo de Desminagem;Auxiliar de Campo de Desminagem de 1ª Classe;;520;127 266,45;;
+ANEXO XXVII;Apoio Operativo;Apoio Operativo de Desminagem;Auxiliar de Campo de Desminagem de 2ª Classe;;500;122 371,59;;
+ANEXO XXVIII;;Quadro Permanente;General Exército/Gen. Aviação/Almirante Armada;;154;836 351,94;;
+ANEXO XXVIII;;Quadro Permanente;General CEMR/CAdEMG;;141;765 750,80;;
+ANEXO XXVIII;;Quadro Permanente;General, Almirante;;128;695 149,66;;
+ANEXO XXVIII;;Quadro Permanente;Tenente General/Vice-Almirante;;115;624 548,53;;
+ANEXO XXVIII;;Quadro Permanente;Brigadeiro/Contra-Almirante;;109;591 963,39;;
+ANEXO XXVIII;;Quadro Permanente;Coronel, Capitão-Mar-e-Guerra;;2579;560 087,18;;
+ANEXO XXVIII;;Quadro Permanente;Tenente Coronel, Capitão Fragata;;2288;496 890,06;;
+ANEXO XXVIII;;Quadro Permanente;Major, Capitão de Corveta;;2052;445 637,42;;
+ANEXO XXVIII;;Quadro Permanente;Capitão, Tenente de Navio;;1625;352 904,87;;
+ANEXO XXVIII;;Quadro Permanente;Tenente, Tenente de Fragata;;1445;313 813,87;;
+ANEXO XXVIII;;Quadro Permanente;Subtenente, Tenente de Corveta;;1264;274 505,70;;
+ANEXO XXVIII;;Quadro Permanente;Sargento Maior;;1445;313 813,87;;
+ANEXO XXVIII;;Quadro Permanente;Sargento Chefe;;1264;274 505,70;;
+ANEXO XXVIII;;Quadro Permanente;Sargento Ajudante;;1197;259 955,16;;
+ANEXO XXVIII;;Quadro Permanente;Primeiro Sargento;;1134;246 273,31;;
+ANEXO XXVIII;;Quadro Permanente;Segundo Sargento;;1037;225 207,60;;
+ANEXO XXVIII;;Serviço Militar por Contrato;Tenente, Tenente de Fragata;;1264;274 505,70;;
+ANEXO XXVIII;;Serviço Militar por Contrato;Subtenente, Tenente de Corveta;;1197;259 955,16;;
+ANEXO XXVIII;;Serviço Militar por Contrato;Primeiro Sargento;;1134;246 273,31;;
+ANEXO XXVIII;;Serviço Militar por Contrato;Segundo Sargento;;1037;225 207,60;;
+ANEXO XXVIII;;Serviço Militar Obrigatório;Aspirante / Guarda Marinha;;1030;223 687,40;;
+ANEXO XXVIII;;Serviço Militar Obrigatório;Sub-Sargento;;705;153 106,42;;
+ANEXO XXVIII;;Serviço Militar Obrigatório;1º Cabo / Cabo;;560;121 616,45;;
+ANEXO XXVIII;;Serviço Militar Obrigatório;2º Cabo / Marinheiro;;522;113 363,90;;
+ANEXO XXVIII;;Serviço Militar Obrigatório;Soldado / Grumete;;455;98 813,36;;
+ANEXO XXVIII;;Serviço Militar Obrigatório;Recruta;;268;58 202,16;;
+ANEXO XXIX;;Polícia Nacional;Comissário Geral;;154;836 351,94;;
+ANEXO XXIX;;Polícia Nacional;Comissário Chefe/2ºCGPN;;141;765 750,80;;
+ANEXO XXIX;;Polícia Nacional;Comissário Chefe;;128;695 149,66;;
+ANEXO XXIX;;Polícia Nacional;Comissário;;115;624 548,53;;
+ANEXO XXIX;;Polícia Nacional;Sub-Comissário;;109;591 963,39;;
+ANEXO XXIX;;Polícia Nacional;Superintendente Chefe;;2579;560 087,18;;
+ANEXO XXIX;;Polícia Nacional;Superintendente;;2288;496 890,06;;
+ANEXO XXIX;;Polícia Nacional;Intendente;;2052;445 637,42;;
+ANEXO XXIX;;Polícia Nacional;Inspector Chefe;;1896;411 758,55;;
+ANEXO XXIX;;Polícia Nacional;Inspector;;1812;393 516,08;;
+ANEXO XXIX;;Polícia Nacional;Subinspector;;1625;352 904,87;;
+ANEXO XXIX;;Polícia Nacional;1º Subchefe;;1445;313 813,87;;
+ANEXO XXIX;;Polícia Nacional;2º Subchefe;;1264;274 505,70;;
+ANEXO XXIX;;Polícia Nacional;3º Subchefe;;1174;254 960,20;;
+ANEXO XXIX;;Polícia Nacional;Agente de 1ª Classe;;846;183 727,71;;
+ANEXO XXIX;;Polícia Nacional;Agente de 2ª Classe;;783;170 045,86;;
+ANEXO XXIX;;Polícia Nacional;Agente de 3ª Classe;;719;156 146,83;;
+ANEXO XXIX;;Polícia Nacional;Alistado;;268;58 202,16;;
+ANEXO XXX;;Serviço de Investigação Criminal;Comissário Chefe de Invest. Criminal/COEC;;141;765 750,80;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Comissário Bomb. Principal/COEC;;141;765 750,80;;
+ANEXO XXX;;Serviço Penitenciário;Comissário Pris. Principal/COEC;;141;765 750,80;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Comissário de Mig. Principal/COEC;;141;765 750,80;;
+ANEXO XXX;;Serviço de Investigação Criminal;Comissário Chefe de Invest. Criminal;;128;695 149,66;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Comissário Bombeiro Principal;;128;695 149,66;;
+ANEXO XXX;;Serviço Penitenciário;Comissário Prisional Principal;;128;695 149,66;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Comissário de Migração Principal;;128;695 149,66;;
+ANEXO XXX;;Serviço de Investigação Criminal;Comissário Invest. Criminal;;115;624 548,53;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Comissário Bombeiro;;115;624 548,53;;
+ANEXO XXX;;Serviço Penitenciário;Comissário Prisional;;115;624 548,53;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Comissário de Migração;;115;624 548,53;;
+ANEXO XXX;;Serviço de Investigação Criminal;Sub-Comissário Investigação Criminal;;109;591 963,39;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Sub-Comissário Bombeiro;;109;591 963,39;;
+ANEXO XXX;;Serviço Penitenciário;Sub-Comissário Prisional;;109;591 963,39;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Sub-Comissário de Migração;;109;591 963,39;;
+ANEXO XXX;;Serviço de Investigação Criminal;Superintendente Chefe de Invest. Criminal;;2579;560 087,18;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Superintendente Bombeiro Chefe;;2579;560 087,18;;
+ANEXO XXX;;Serviço Penitenciário;Superintendente Prisional Chefe;;2579;560 087,18;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Superintendente de Migração Chefe;;2579;560 087,18;;
+ANEXO XXX;;Serviço de Investigação Criminal;Superintendente Investigação Criminal;;2288;496 890,06;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Superintendente Bombeiro;;2288;496 890,06;;
+ANEXO XXX;;Serviço Penitenciário;Superintendente Prisional;;2288;496 890,06;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Superintendente de Migração;;2288;496 890,06;;
+ANEXO XXX;;Serviço de Investigação Criminal;Intendente de Investigação Criminal;;2052;445 637,42;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Intendente Bombeiro;;2052;445 637,42;;
+ANEXO XXX;;Serviço Penitenciário;Intendente Prisional;;2052;445 637,42;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Intendente de Migração;;2052;445 637,42;;
+ANEXO XXX;;Serviço de Investigação Criminal;Inspector Chefe de Investigação Criminal;;1896;411 758,55;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Inspector Bombeiro Chefe;;1896;411 758,55;;
+ANEXO XXX;;Serviço Penitenciário;Inspector Prisional Chefe;;1896;411 758,55;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Inspector de Migração Chefe;;1896;411 758,55;;
+ANEXO XXX;;Serviço de Investigação Criminal;Inspector de Investigação Criminal;;1812;393 516,08;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Inspector Bombeiro;;1812;393 516,08;;
+ANEXO XXX;;Serviço Penitenciário;Inspector Prisional;;1812;393 516,08;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Inspector de Migração;;1812;393 516,08;;
+ANEXO XXX;;Serviço de Investigação Criminal;Subinspector de Investigação Criminal;;1625;352 904,87;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Subinspector Bombeiro;;1625;352 904,87;;
+ANEXO XXX;;Serviço Penitenciário;Subinspector Prisional;;1625;352 904,87;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Subinspector de Migração;;1625;352 904,87;;
+ANEXO XXX;;Serviço de Investigação Criminal;1º Subchefe de Investigação Criminal;;1445;313 813,87;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;1º Subchefe Bombeiro;;1445;313 813,87;;
+ANEXO XXX;;Serviço Penitenciário;1º Subchefe Prisional;;1445;313 813,87;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;1º Subchefe de Migração;;1445;313 813,87;;
+ANEXO XXX;;Serviço de Investigação Criminal;2º Subchefe de Investigação Criminal;;1264;274 505,70;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;2º Subchefe Bombeiro;;1264;274 505,70;;
+ANEXO XXX;;Serviço Penitenciário;2º Subchefe Prisional;;1264;274 505,70;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;2º Subchefe de Migração;;1264;274 505,70;;
+ANEXO XXX;;Serviço de Investigação Criminal;3º Subchefe de Investigação Criminal;;1174;254 960,20;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;3º Subchefe Bombeiro;;1174;254 960,20;;
+ANEXO XXX;;Serviço Penitenciário;3º Subchefe Prisional;;1174;254 960,20;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;3º Subchefe de Migração;;1174;254 960,20;;
+ANEXO XXX;;Serviço de Investigação Criminal;Agente de 1ª Classe de Invest. Criminal;;846;183 727,71;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Agente Bombeiro de 1ª Classe;;846;183 727,71;;
+ANEXO XXX;;Serviço Penitenciário;Agente Prisional de 1ª Classe;;846;183 727,71;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Agente de Migração de 1ª Classe;;846;183 727,71;;
+ANEXO XXX;;Serviço de Investigação Criminal;Agente de 2ª Classe de Invest. Criminal;;783;170 045,86;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Agente Bombeiro de 2ª Classe;;783;170 045,86;;
+ANEXO XXX;;Serviço Penitenciário;Agente Prisional de 2ª Classe;;783;170 045,86;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Agente de Migração de 2ª Classe;;783;170 045,86;;
+ANEXO XXX;;Serviço de Investigação Criminal;Agente de 3ª Classe de Invest. Criminal;;719;156 146,83;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Agente Bombeiro de 3ª Classe;;719;156 146,83;;
+ANEXO XXX;;Serviço Penitenciário;Agente Prisional de 3ª Classe;;719;156 146,83;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Agente de Migração de 3ª Classe;;719;156 146,83;;
+ANEXO XXX;;Serviço de Investigação Criminal;Alistado;;268;58 202,16;;
+ANEXO XXX;;Serviço de Protecção Civil e Bombeiros;Alistado;;268;58 202,16;;
+ANEXO XXX;;Serviço Penitenciário;Alistado;;268;58 202,16;;
+ANEXO XXX;;Serviço de Migração e Estrangeiros;Alistado;;268;58 202,16;;

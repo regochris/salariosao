@@ -7,7 +7,7 @@ const links = [
   { href: "/calculadora", label: "Calculadora" },
   { href: "/registo?perfil=estudante", label: "Estudantes" },
   { href: "/metodologia", label: "Metodologia" },
-  { href: "/registo", label: "Entrar" },
+  { href: "/entrar", label: "Entrar" },
 ];
 
 export function Header() {

@@ -59,7 +59,7 @@ export function Registo({ inicial }: { inicial: Perfil }) {
       <button type="submit" className={`${pillPrimary} h-[50px]`}>
         {perfil === "trabalho" ? "Criar conta e partilhar" : "Criar conta"}
       </button>
-      <p className="m-0 text-center text-[15px]">Já tem conta? <Link href="/registo">Entrar</Link></p>
+      <p className="m-0 text-center text-[15px]">Já tem conta? <Link href="/entrar">Entrar</Link></p>
       <p className="m-0 text-center text-xs text-muted">
         Ao criar conta aceita os <Link href="/termos">Termos</Link> e a <Link href="/privacidade">Política de privacidade</Link>.
       </p>

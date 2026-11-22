@@ -8,7 +8,7 @@ const items = [
   { href: "/", label: "Início", Icon: HomeIcon },
   { href: "/salarios", label: "Pesquisar", Icon: SearchIcon },
   { href: "/partilhar", label: "Partilhar", Icon: PlusCircleIcon },
-  { href: "/registo", label: "Conta", Icon: UserIcon },
+  { href: "/entrar", label: "Conta", Icon: UserIcon },
 ];
 
 // Navegação inferior: só no telemóvel.

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ShieldIcon } from "@/components/Icons";
 import { supabaseBrowser } from "@/lib/supabase/client";
 import { formatKz } from "@/lib/format";
@@ -12,6 +12,7 @@ export type Catalogo = {
   cargos: { id: number; nome: string; sinonimos: string[]; area_id: number | null }[];
   provincias: { id: number; nome: string }[];
   ramos: { id: number; nome: string }[];
+  municipios: { id: number; nome: string; provincia_id: number }[];
   posicoes: {
     anexo: string; tabela: string; tabela_id: number; carreira: string; carreira_id: number;
     categoria: string; categoria_id: number; ordem: number; posicao_id: number; variante: string; vencimento_base: number;
@@ -31,6 +32,15 @@ const orgaos: [string, string][] = [
   ["ministerio", "Ministério"], ["governo_provincial", "Governo provincial"], ["administracao_municipal", "Administração municipal"],
   ["empresa_publica", "Empresa pública"], ["instituto_publico", "Instituto público"], ["outro", "Outro"],
 ];
+// No público, renda e isolamento são uma percentagem do vencimento base.
+const PERCENTUAIS_PUBLICO = ["renda", "isolamento"];
+const niveis: [string, string][] = [
+  ["Estagiário", "Estagiário"],
+  ["Sem chefia", "Profissional, sem chefia"],
+  ["Sénior", "Sénior / especialista, sem chefia"],
+  ["Chefia", "Chefia (coordenador, supervisor, chefe de secção)"],
+  ["Direcção", "Direcção (chefe de departamento, director)"],
+];
 const subsidios: [string, string][] = [
   ["alimentacao", "Alimentação"], ["transporte", "Transporte"], ["renda", "Renda / habitação"], ["isolamento", "Isolamento / zona"],
   ["risco", "Risco"], ["turno", "Turno / nocturno"], ["comunicacoes", "Comunicações"], ["complemento_fixo", "Complemento fixo"],
@@ -38,7 +48,27 @@ const subsidios: [string, string][] = [
 const beneficios = ["Seguro de saúde", "Seguro com família", "Viatura", "Combustível", "Formação paga", "Plano de pensões"];
 
 const norm = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
-const valor = (v: FormDataEntryValue | null) => Number(String(v ?? "").replace(/[^\d.,]/g, "").replace(/\./g, "").replace(",", ".")) || 0;
+// Aceita "250 000", "250.000", "250000,50". Fica só com a parte inteira (Kz).
+const valor = (v: FormDataEntryValue | string | null) => Number(String(v ?? "").split(",")[0].replace(/\D/g, "")) || 0;
+const agrupar = (s: string) => {
+  const d = s.split(",")[0].replace(/\D/g, "").replace(/^0+(?=\d)/, "");
+  return d.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+};
+
+// Campo de dinheiro: só aceita algarismos e mostra os milhares separados ("250 000").
+function Dinheiro({ id, valorInicial = "", placeholder = "0", grande, required, onValor }: { id: string; valorInicial?: string; placeholder?: string; grande?: boolean; required?: boolean; onValor?: (v: number) => void }) {
+  const [v, setV] = useState(valorInicial);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { onValor?.(valor(valorInicial)); }, []);
+  return (
+    <input
+      id={id} name={id} type="text" inputMode="numeric" autoComplete="off" required={required}
+      value={v} placeholder={placeholder}
+      onChange={(e) => { const f = agrupar(e.target.value); setV(f); onValor?.(valor(f)); }}
+      className={`${field} num ${grande ? "h-14 text-[22px] font-semibold" : ""}`}
+    />
+  );
+}
 
 function Campo({ id, nome, opcional, children }: { id: string; nome: string; opcional?: boolean; children: React.ReactNode }) {
   return (
@@ -64,6 +94,9 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
   const [carreiraId, setCarreiraId] = useState<number | null>(null);
   const [categoriaId, setCategoriaId] = useState<number | null>(null);
   const [posicaoId, setPosicaoId] = useState<number | null>(null);
+  const [provinciaId, setProvinciaId] = useState<number | null>(null);
+  const [base, setBase] = useState(0);
+  const [pct, setPct] = useState<Record<string, number>>({});
   const [aEnviar, setAEnviar] = useState(false);
   const [erro, setErro] = useState("");
   const [feito, setFeito] = useState(false);
@@ -89,6 +122,7 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
     const cargoTexto = String(f.get("cargo")).trim();
     const cargo = catalogo.cargos.find((c) => norm(c.nome) === norm(cargoTexto) || c.sinonimos.some((s) => norm(s) === norm(cargoTexto)));
     const supabase = supabaseBrowser();
+    const municipio = catalogo.municipios.find((m) => m.id === Number(f.get("municipio")));
 
     const { data, error } = await supabase
       .from("partilhas")
@@ -105,7 +139,8 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
         orgao_tipo: sector === "publico" ? f.get("orgao") || null : null,
         posicao_id: sector === "publico" ? posicao?.posicao_id ?? null : null,
         provincia_id: Number(f.get("provincia")),
-        municipio_texto: String(f.get("municipio") ?? "").trim() || null,
+        municipio_id: municipio?.id ?? null,
+        municipio_texto: municipio?.nome ?? null,
         exp_total: f.get("exp") || null,
         exp_cargo: f.get("expc") || null,
         formacao: f.get("formacao") || null,
@@ -130,9 +165,20 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
       return;
     }
 
-    const comps = [...subsidios.map(([k]) => [k, valor(f.get(`sb-${k}`))] as const), ["comissoes", valor(f.get("comissoes"))] as const, ["premio_anual", valor(f.get("premio"))] as const]
-      .filter(([, v]) => v > 0)
-      .map(([tipo, v]) => ({ partilha_id: data.id, tipo, valor_mensal_kz: v }));
+    const baseKz = valor(f.get("base"));
+    const comps = [
+      ...subsidios.map(([k]) => {
+        if (sector === "publico" && PERCENTUAIS_PUBLICO.includes(k)) {
+          const p = pct[k] ?? 0;
+          return { tipo: k, v: Math.round((baseKz * p) / 100), percentagem: p || null };
+        }
+        return { tipo: k, v: valor(f.get(`sb-${k}`)), percentagem: null };
+      }),
+      { tipo: "comissoes", v: valor(f.get("comissoes")), percentagem: null },
+      { tipo: "premio_anual", v: valor(f.get("premio")), percentagem: null },
+    ]
+      .filter((c) => c.v > 0)
+      .map((c) => ({ partilha_id: data.id, tipo: c.tipo, valor_mensal_kz: c.v, percentagem: c.percentagem }));
     const bens = f.getAll("beneficios").map((b) => ({ partilha_id: data.id, beneficio: String(b) }));
     await Promise.all([
       comps.length ? supabase.from("partilha_componentes").insert(comps) : null,
@@ -163,7 +209,8 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
       {nome}
     </button>
   );
-  const dinheiro = (id: string, ph = "Kz") => <input id={id} name={id} inputMode="numeric" placeholder={ph} className={field} />;
+  const dinheiro = (id: string, ph = "Kz") => <Dinheiro id={id} placeholder={ph} />;
+  const municipiosDaProvincia = catalogo.municipios.filter((m) => m.provincia_id === provinciaId);
 
   return (
     <form ref={formRef} noValidate onSubmit={(e) => { e.preventDefault(); if (!passoValido()) return; if (passo < TOTAL) setPasso(passo + 1); else enviar(); }} className="flex flex-col gap-6">
@@ -189,7 +236,10 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
           <datalist id="lista-cargos">{catalogo.cargos.map((c) => <option key={c.id} value={c.nome} />)}</datalist>
         </Campo>
         <Campo id="area" nome="Área"><Opcoes id="area" opcoes={catalogo.areas.map((a) => [a.id, a.nome])} /></Campo>
-        <Campo id="nivel" nome="Nível"><Opcoes id="nivel" opcoes={["Estagiário", "Técnico", "Técnico sénior", "Chefe de secção", "Chefe de departamento", "Director"]} /></Campo>
+        <Campo id="nivel" nome="Responsabilidade">
+          <Opcoes id="nivel" opcoes={niveis} />
+          <span className="text-xs leading-4 text-muted">Ex.: um professor ou enfermeiro sem cargo de chefia escolhe «Profissional, sem chefia». Um director de escola escolhe «Direcção».</span>
+        </Campo>
       </div>
 
       <div data-passo="2" hidden={passo !== 2} className="flex flex-col gap-5">
@@ -250,8 +300,18 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
 
       <div data-passo="3" hidden={passo !== 3} className="flex flex-col gap-5">
         <div className="grid grid-cols-2 gap-3">
-          <Campo id="provincia" nome="Província"><Opcoes id="provincia" opcoes={catalogo.provincias.map((p) => [p.id, p.nome])} /></Campo>
-          <Campo id="municipio" nome="Município"><input id="municipio" name="municipio" required className={field} /></Campo>
+          <Campo id="provincia" nome="Província">
+            <select id="provincia" name="provincia" required className={field} value={provinciaId ?? ""} onChange={(e) => setProvinciaId(Number(e.target.value))}>
+              <option value="" disabled>Escolher…</option>
+              {catalogo.provincias.map((p) => <option key={p.id} value={p.id}>{p.nome}</option>)}
+            </select>
+          </Campo>
+          <Campo id="municipio" nome="Município">
+            <select key={provinciaId ?? 0} id="municipio" name="municipio" required disabled={!provinciaId} className={`${field} disabled:opacity-50`} defaultValue="">
+              <option value="" disabled>{provinciaId ? "Escolher…" : "Escolha a província"}</option>
+              {municipiosDaProvincia.map((m) => <option key={m.id} value={m.id}>{m.nome}</option>)}
+            </select>
+          </Campo>
         </div>
         <div className="grid grid-cols-2 gap-3">
           <Campo id="exp" nome="Experiência total"><Opcoes id="exp" opcoes={["0 a 2 anos", "3 a 5 anos", "6 a 10 anos", "Mais de 10 anos"]} /></Campo>
@@ -269,17 +329,35 @@ export function Formulario({ catalogo, autorId }: { catalogo: Catalogo; autorId:
 
       <div data-passo="5" hidden={passo !== 5} className="flex flex-col gap-5">
         <Campo id="base" nome="Salário base mensal bruto">
-          <div className="flex gap-2">
-            <input id="base" name="base" required inputMode="numeric" pattern="[0-9 .,]+" placeholder={posicao ? String(Math.round(posicao.vencimento_base)) : "0"} className={`${field} num flex-1 text-[22px] font-semibold`} />
-            <select aria-label="Moeda" name="moeda" className={`${field} w-32`} defaultValue="AOA">
-              <option value="AOA">Kz</option><option value="USD">USD</option><option value="AOA_USD">Kz indexado ao USD</option>
-            </select>
-          </div>
+          <Dinheiro
+            key={posicao?.posicao_id ?? "livre"}
+            id="base" grande required onValor={setBase}
+            valorInicial={posicao ? agrupar(String(Math.round(posicao.vencimento_base))) : ""}
+            placeholder="Ex.: 250 000"
+          />
+          {posicao && <span className="text-xs leading-4 text-muted">Preenchido com o valor da tabela oficial. Altere se o seu recibo indicar outro valor.</span>}
+        </Campo>
+        <Campo id="moeda" nome="Moeda">
+          <select id="moeda" name="moeda" className={field} defaultValue="AOA">
+            <option value="AOA">Kwanza (Kz)</option><option value="USD">Dólar (USD)</option><option value="AOA_USD">Kz indexado ao dólar</option>
+          </select>
         </Campo>
         <Campo id="ano" nome="Ano a que se refere"><Opcoes id="ano" opcoes={[[2026, "2026"], [2025, "2025"]]} /></Campo>
         <p className="m-0 text-[15px] font-semibold">Subsídios mensais <span className="font-normal text-muted">(os que recebe)</span></p>
         <div className="grid grid-cols-2 gap-3">
-          {subsidios.map(([k, n]) => <Campo key={k} id={`sb-${k}`} nome={n}>{dinheiro(`sb-${k}`)}</Campo>)}
+          {subsidios.map(([k, n]) =>
+            sector === "publico" && PERCENTUAIS_PUBLICO.includes(k) ? (
+              <Campo key={k} id={`pc-${k}`} nome={`${n} (% do base)`}>
+                <select id={`pc-${k}`} className={field} value={pct[k] ?? 0} onChange={(e) => setPct({ ...pct, [k]: Number(e.target.value) })}>
+                  <option value={0}>Não recebo</option>
+                  {[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100].map((p) => <option key={p} value={p}>{p}%</option>)}
+                </select>
+                {(pct[k] ?? 0) > 0 && <span className="num text-xs text-muted">≈ {formatKz(Math.round((base * pct[k]) / 100))} por mês</span>}
+              </Campo>
+            ) : (
+              <Campo key={k} id={`sb-${k}`} nome={n}>{dinheiro(`sb-${k}`)}</Campo>
+            ),
+          )}
         </div>
         <label className="flex min-h-11 items-center gap-2.5"><input type="checkbox" name="ferias" className="size-5" /> Recebo subsídio de férias</label>
         <label className="flex min-h-11 items-center gap-2.5"><input type="checkbox" name="decimo" className="size-5" /> Recebo 13.º mês (subsídio de Natal)</label>

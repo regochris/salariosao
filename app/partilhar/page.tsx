@@ -36,12 +36,13 @@ export default async function Partilhar() {
   }
 
   const supabase = await supabaseServer();
-  const [areas, cargos, provincias, ramos, tabela] = await Promise.all([
+  const [areas, cargos, provincias, ramos, tabela, municipios] = await Promise.all([
     supabase.from("areas").select("id, nome").order("nome"),
     supabase.from("cargos").select("id, nome, sinonimos, area_id").eq("activo", true).order("nome"),
     supabase.from("provincias").select("id, nome").order("nome"),
     supabase.from("ramos").select("id, nome").order("id"),
     supabase.from("tabela_vigente").select("anexo, tabela, tabela_id, carreira, carreira_id, categoria, categoria_id, ordem, posicao_id, variante, vencimento_base").order("tabela_id").order("carreira_id").order("ordem"),
+    supabase.from("municipios").select("id, nome, provincia_id").order("nome").limit(1000),
   ]);
 
   const catalogo: Catalogo = {
@@ -49,6 +50,7 @@ export default async function Partilhar() {
     cargos: cargos.data ?? [],
     provincias: provincias.data ?? [],
     ramos: ramos.data ?? [],
+    municipios: municipios.data ?? [],
     posicoes: (tabela.data ?? []).map((r) => ({ ...r, vencimento_base: Number(r.vencimento_base) })),
   };
 

@@ -145,3 +145,13 @@ Direto, português de Angola, sem jargão. Termos a usar: "salário base", "subs
   --success:#4CC27A; --warning:#E0A93B; --error:#F0776B;
 }
 ```
+
+## Marca: Wiva
+
+- **Nome:** Wiva (do kimbundu, «ouvir» — a confirmar com falantes). Feminino: «a Wiva».
+- **Slogan:** A voz real do mercado de trabalho.
+- **Símbolo:** dois V iguais formam um W. Azul (#0066CC) = quem contrata / o mercado; terracota (#C2571E) = quem trabalha / a terra angolana. No centro, o V terracota passa à frente do azul com uma folga fina, já recortada no desenho (funciona sobre qualquer fundo). Grelha de 48, braços com inclinação 9 : 30, cortes horizontais.
+- **Componente:** `components/Logo.tsx` — `<Logo />` (símbolo + nome) e `<Simbolo />`. Variantes: `cor`, `escuro` (#3D9BFF / #E8875A), `azul` (branco / #F6C7A6, sobre fundo azul), `mono` (currentColor).
+- **Nome em tinta** (#1D1D1F; #F5F5F7 no escuro): a cor vive só no símbolo.
+- **Ícones:** `app/icon.svg` (favicon) e `app/apple-icon.png` (180 px, fundo azul).
+- Maquetas e construção: canvas «SaláriosAO — Maquetas», pranchetas «Logótipo».

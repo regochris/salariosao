@@ -10,7 +10,7 @@ export default function NaoEncontrado() {
         Esta página está quase pronta.
       </h1>
       <p className="m-0 max-w-[34ch] text-[19px] leading-[26px] text-muted">
-        Estamos a preparar esta secção do SaláriosAO. Volte em breve.
+        Estamos a preparar esta secção da Wiva. Volte em breve.
       </p>
       <Link href="/" className={`${pillPrimary} mt-4`}>
         Voltar ao início

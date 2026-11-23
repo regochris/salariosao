@@ -11,11 +11,13 @@ const serif = Instrument_Serif({ weight: "400", style: ["normal", "italic"], sub
 
 export const metadata: Metadata = {
   title: {
-    default: "SaláriosAO — Quanto vale o seu trabalho em Angola",
-    template: "%s · SaláriosAO",
+    default: "Wiva — A voz real do mercado de trabalho",
+    template: "%s · Wiva",
   },
   description:
-    "Salários reais de Angola por cargo, sector e província. Público e privado, partilhados de forma anónima.",
+    "Salários reais de Angola por cargo, sector e província. Público e privado, partilhados de forma anónima por quem trabalha.",
+  applicationName: "Wiva",
+  openGraph: { siteName: "Wiva", locale: "pt_AO", type: "website" },
 };
 
 export const viewport: Viewport = {

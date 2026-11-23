@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import { exigirAdmin } from "@/lib/admin";
 import { supabaseServer } from "@/lib/supabase/server";
 import { AdminNav } from "./AdminNav";
+import { Logo } from "@/components/Logo";
 
-export const metadata: Metadata = { title: { default: "Painel", template: "%s · Painel SaláriosAO" }, robots: { index: false } };
+export const metadata: Metadata = { title: { default: "Painel", template: "%s · Painel Wiva" }, robots: { index: false } };
 export const dynamic = "force-dynamic";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -22,7 +23,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <aside className="flex flex-col gap-2 border-b border-line bg-surface px-3 py-3 md:sticky md:top-0 md:h-dvh md:w-[260px] md:shrink-0 md:gap-1.5 md:border-r md:border-b-0 md:px-3.5 md:py-5">
         <div className="flex items-center justify-between gap-2 px-3 md:pb-4">
           <Link href="/" className="plain flex items-center gap-2 text-ink no-underline">
-            <span className="text-[19px] font-semibold">Salários<span className="text-primary">AO</span></span>
+            <Logo tamanho={28} />
             <span className="rounded-full bg-ink px-2 py-0.5 text-[11px] font-semibold tracking-[0.4px] text-bg">ADMIN</span>
           </Link>
           <Link href="/" className="text-sm md:hidden">Ver site ›</Link>

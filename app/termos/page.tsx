@@ -11,7 +11,7 @@ export default function Termos() {
 
       <section>
         <h2>O serviço</h2>
-        <p>O SaláriosAO apresenta informação salarial agregada sobre Angola, com base em partilhas anónimas, tabelas oficiais, dados de empresas e pesquisa própria.</p>
+        <p>A Wiva apresenta informação salarial agregada sobre Angola, com base em partilhas anónimas, tabelas oficiais, dados de empresas e pesquisa própria.</p>
       </section>
 
       <section>

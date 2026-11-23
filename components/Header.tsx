@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { supabaseBrowser } from "@/lib/supabase/client";
@@ -25,8 +26,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-20 bg-bg/80 backdrop-blur-xl backdrop-saturate-150">
       <div className="mx-auto grid min-h-16 max-w-[1200px] grid-cols-[1fr_auto_1fr] items-center gap-4 px-4 md:px-8">
-        <Link href="/" className="plain justify-self-start text-[20px] font-semibold tracking-[-0.4px] text-ink">
-          Salários<span className="text-primary">AO</span>
+        <Link href="/" aria-label="Wiva, página inicial" className="plain justify-self-start text-ink">
+          <Logo tamanho={32} />
         </Link>
 
         <nav aria-label="Principal" className="hidden items-center gap-0.5 rounded-pill border border-line bg-bg p-1 md:flex">

@@ -17,7 +17,7 @@ export default function Metodologia() {
     <PaginaTexto
       etiqueta="Metodologia"
       titulo="De onde vêm os números."
-      intro="Cada valor do SaláriosAO mostra a fonte e quantas respostas tem por trás. Assim sabe até que ponto pode confiar nele."
+      intro="Cada valor da Wiva mostra a fonte e quantas respostas tem por trás. Assim sabe até que ponto pode confiar nele."
     >
       <section>
         <h2>Quatro fontes</h2>

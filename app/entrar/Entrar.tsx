@@ -79,7 +79,7 @@ export function Entrar() {
     <form onSubmit={entrar} className="flex flex-col gap-5">
       <div className="flex flex-col gap-1.5 text-center">
         <h1 className="m-0 text-[32px] leading-9 font-bold tracking-[-0.6px]">Entrar.</h1>
-        <p className="m-0 text-[17px] text-muted">Bem-vindo de volta ao SaláriosAO.</p>
+        <p className="m-0 text-[17px] text-muted">Bem-vindo de volta à Wiva.</p>
       </div>
 
       <div className="flex flex-col gap-1.5">

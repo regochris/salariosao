@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Simbolo } from "@/components/Logo";
 
 export function Footer() {
   return (
@@ -9,7 +10,7 @@ export function Footer() {
           oficiais. Nunca mostramos respostas individuais.
         </p>
         <div className="flex flex-wrap justify-between gap-3">
-          <span>SaláriosAO · Angola</span>
+          <span className="flex items-center gap-2"><Simbolo tamanho={16} /> Wiva · A voz real do mercado de trabalho</span>
           <div className="flex flex-wrap gap-x-5 gap-y-1">
             <Link href="/metodologia" className="text-muted">Metodologia</Link>
             <Link href="/privacidade" className="text-muted">Privacidade</Link>
